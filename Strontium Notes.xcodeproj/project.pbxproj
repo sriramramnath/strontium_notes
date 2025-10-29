@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		80C5CDD02EB2424200CC937F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80C5CDB92EB2424100CC937F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80C5CDC02EB2424100CC937F;
+			remoteInfo = "Strontium Notes";
+		};
+		80C5CDDA2EB2424200CC937F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80C5CDB92EB2424100CC937F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80C5CDC02EB2424100CC937F;
+			remoteInfo = "Strontium Notes";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		80C5CDC12EB2424100CC937F /* Strontium Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Strontium Notes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80C5CDCF2EB2424200CC937F /* Strontium NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Strontium NotesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80C5CDD92EB2424200CC937F /* Strontium NotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Strontium NotesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		80C5CDC32EB2424100CC937F /* Strontium Notes */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Strontium Notes";
+			sourceTree = "<group>";
+		};
+		80C5CDD22EB2424200CC937F /* Strontium NotesTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Strontium NotesTests";
+			sourceTree = "<group>";
+		};
+		80C5CDDC2EB2424200CC937F /* Strontium NotesUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Strontium NotesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80C5CDBE2EB2424100CC937F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5CDCC2EB2424200CC937F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5CDD62EB2424200CC937F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80C5CDB82EB2424100CC937F = {
+			isa = PBXGroup;
+			children = (
+				80C5CDC32EB2424100CC937F /* Strontium Notes */,
+				80C5CDD22EB2424200CC937F /* Strontium NotesTests */,
+				80C5CDDC2EB2424200CC937F /* Strontium NotesUITests */,
+				80C5CDC22EB2424100CC937F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80C5CDC22EB2424100CC937F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80C5CDC12EB2424100CC937F /* Strontium Notes.app */,
+				80C5CDCF2EB2424200CC937F /* Strontium NotesTests.xctest */,
+				80C5CDD92EB2424200CC937F /* Strontium NotesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80C5CDC02EB2424100CC937F /* Strontium Notes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80C5CDE32EB2424200CC937F /* Build configuration list for PBXNativeTarget "Strontium Notes" */;
+			buildPhases = (
+				80C5CDBD2EB2424100CC937F /* Sources */,
+				80C5CDBE2EB2424100CC937F /* Frameworks */,
+				80C5CDBF2EB2424100CC937F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				80C5CDC32EB2424100CC937F /* Strontium Notes */,
+			);
+			name = "Strontium Notes";
+			packageProductDependencies = (
+			);
+			productName = "Strontium Notes";
+			productReference = 80C5CDC12EB2424100CC937F /* Strontium Notes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80C5CDCE2EB2424200CC937F /* Strontium NotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80C5CDE62EB2424200CC937F /* Build configuration list for PBXNativeTarget "Strontium NotesTests" */;
+			buildPhases = (
+				80C5CDCB2EB2424200CC937F /* Sources */,
+				80C5CDCC2EB2424200CC937F /* Frameworks */,
+				80C5CDCD2EB2424200CC937F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80C5CDD12EB2424200CC937F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				80C5CDD22EB2424200CC937F /* Strontium NotesTests */,
+			);
+			name = "Strontium NotesTests";
+			packageProductDependencies = (
+			);
+			productName = "Strontium NotesTests";
+			productReference = 80C5CDCF2EB2424200CC937F /* Strontium NotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80C5CDD82EB2424200CC937F /* Strontium NotesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80C5CDE92EB2424200CC937F /* Build configuration list for PBXNativeTarget "Strontium NotesUITests" */;
+			buildPhases = (
+				80C5CDD52EB2424200CC937F /* Sources */,
+				80C5CDD62EB2424200CC937F /* Frameworks */,
+				80C5CDD72EB2424200CC937F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80C5CDDB2EB2424200CC937F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				80C5CDDC2EB2424200CC937F /* Strontium NotesUITests */,
+			);
+			name = "Strontium NotesUITests";
+			packageProductDependencies = (
+			);
+			productName = "Strontium NotesUITests";
+			productReference = 80C5CDD92EB2424200CC937F /* Strontium NotesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80C5CDB92EB2424100CC937F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					80C5CDC02EB2424100CC937F = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					80C5CDCE2EB2424200CC937F = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 80C5CDC02EB2424100CC937F;
+					};
+					80C5CDD82EB2424200CC937F = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 80C5CDC02EB2424100CC937F;
+					};
+				};
+			};
+			buildConfigurationList = 80C5CDBC2EB2424100CC937F /* Build configuration list for PBXProject "Strontium Notes" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80C5CDB82EB2424100CC937F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 80C5CDC22EB2424100CC937F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80C5CDC02EB2424100CC937F /* Strontium Notes */,
+				80C5CDCE2EB2424200CC937F /* Strontium NotesTests */,
+				80C5CDD82EB2424200CC937F /* Strontium NotesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80C5CDBF2EB2424100CC937F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5CDCD2EB2424200CC937F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5CDD72EB2424200CC937F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80C5CDBD2EB2424100CC937F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5CDCB2EB2424200CC937F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80C5CDD52EB2424200CC937F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80C5CDD12EB2424200CC937F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80C5CDC02EB2424100CC937F /* Strontium Notes */;
+			targetProxy = 80C5CDD02EB2424200CC937F /* PBXContainerItemProxy */;
+		};
+		80C5CDDB2EB2424200CC937F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80C5CDC02EB2424100CC937F /* Strontium Notes */;
+			targetProxy = 80C5CDDA2EB2424200CC937F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		80C5CDE12EB2424200CC937F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80C5CDE22EB2424200CC937F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		80C5CDE42EB2424200CC937F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Strontium Notes/Strontium_Notes.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sriram.Strontium-Notes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		80C5CDE52EB2424200CC937F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Strontium Notes/Strontium_Notes.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sriram.Strontium-Notes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		80C5CDE72EB2424200CC937F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sriram.Strontium-NotesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strontium Notes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Strontium Notes";
+			};
+			name = Debug;
+		};
+		80C5CDE82EB2424200CC937F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sriram.Strontium-NotesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Strontium Notes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Strontium Notes";
+			};
+			name = Release;
+		};
+		80C5CDEA2EB2424200CC937F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sriram.Strontium-NotesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Strontium Notes";
+			};
+			name = Debug;
+		};
+		80C5CDEB2EB2424200CC937F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sriram.Strontium-NotesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Strontium Notes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80C5CDBC2EB2424100CC937F /* Build configuration list for PBXProject "Strontium Notes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80C5CDE12EB2424200CC937F /* Debug */,
+				80C5CDE22EB2424200CC937F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80C5CDE32EB2424200CC937F /* Build configuration list for PBXNativeTarget "Strontium Notes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80C5CDE42EB2424200CC937F /* Debug */,
+				80C5CDE52EB2424200CC937F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80C5CDE62EB2424200CC937F /* Build configuration list for PBXNativeTarget "Strontium NotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80C5CDE72EB2424200CC937F /* Debug */,
+				80C5CDE82EB2424200CC937F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80C5CDE92EB2424200CC937F /* Build configuration list for PBXNativeTarget "Strontium NotesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80C5CDEA2EB2424200CC937F /* Debug */,
+				80C5CDEB2EB2424200CC937F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80C5CDB92EB2424100CC937F /* Project object */;
+}
