@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var appViewModel = AppViewModel()
+    @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
         HStack(spacing: 0) {
@@ -18,28 +19,35 @@ struct ContentView: View {
             
             // Vertical Divider
             Rectangle()
-                .fill(Color.gray.opacity(0.3))
+                .fill(Color.primaryBorder)
                 .frame(width: 1)
             
-            // Main Content Area
-            if appViewModel.selectedNote != nil {
-                ObsidianEditorView(appViewModel: appViewModel)
-            } else {
-                ObsidianWelcomeView(appViewModel: appViewModel)
+            // Main Content Area with smooth transitions
+            Group {
+                if appViewModel.selectedNote != nil {
+                    ObsidianEditorView(appViewModel: appViewModel)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).combined(with: .opacity),
+                            removal: .move(edge: .leading).combined(with: .opacity)
+                        ))
+                } else {
+                    ObsidianWelcomeView(appViewModel: appViewModel)
+                        .transition(.opacity.combined(with: .scale(scale: 0.95)))
+                }
             }
+            .animation(.easeInOut(duration: 0.4), value: appViewModel.selectedNote?.id)
             
             // Right Sidebar - Backlinks/Outline (collapsible)
             if appViewModel.showRightSidebar {
                 Rectangle()
-                    .fill(Color.gray.opacity(0.3))
+                    .fill(Color.primaryBorder)
                     .frame(width: 1)
                 
                 ObsidianRightSidebarView(appViewModel: appViewModel)
                     .frame(width: 280)
             }
         }
-        .background(Color.black)
-        .preferredColorScheme(.dark)
+        .background(Color.primaryBackground)
         .onReceive(NotificationCenter.default.publisher(for: .createNewNote)) { _ in
             appViewModel.createNewNote()
         }
@@ -49,17 +57,35 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .showCommandPalette)) { _ in
             appViewModel.showCommandPalette = true
         }
-        .sheet(isPresented: $appViewModel.isVaultPickerPresented) {
-            ObsidianVaultPickerView(appViewModel: appViewModel)
+        .onReceive(NotificationCenter.default.publisher(for: .toggleSidebar)) { _ in
+            appViewModel.showRightSidebar.toggle()
         }
-        .sheet(isPresented: $appViewModel.isCreateVaultPresented) {
-            ObsidianCreateVaultView(appViewModel: appViewModel)
+        .onReceive(NotificationCenter.default.publisher(for: .setLightMode)) { _ in
+            themeManager.setTheme(.light)
         }
-        .sheet(isPresented: $appViewModel.showingPreferences) {
-            ObsidianPreferencesView(appViewModel: appViewModel)
+        .onReceive(NotificationCenter.default.publisher(for: .setDarkMode)) { _ in
+            themeManager.setTheme(.dark)
         }
-        .sheet(isPresented: $appViewModel.showingAbout) {
-            ObsidianAboutView()
+        .onReceive(NotificationCenter.default.publisher(for: .setSystemTheme)) { _ in
+            themeManager.setTheme(nil)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .splitHorizontal)) { _ in
+            appViewModel.splitPaneHorizontally()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .splitVertical)) { _ in
+            appViewModel.splitPaneVertically()
+        }
+        .sheet(item: $appViewModel.presentedSheet) { sheet in
+            switch sheet {
+            case .vaultPicker:
+                ObsidianVaultPickerView(appViewModel: appViewModel)
+            case .createVault:
+                ObsidianCreateVaultView(appViewModel: appViewModel)
+            case .preferences:
+                ObsidianPreferencesView(appViewModel: appViewModel)
+            case .about:
+                ObsidianAboutView()
+            }
         }
         .overlay(
             Group {
@@ -74,6 +100,7 @@ struct ContentView: View {
                 }
             }
         )
+        .errorAlert(error: $appViewModel.currentError, isPresented: $appViewModel.showError)
     }
 }
 

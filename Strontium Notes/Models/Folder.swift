@@ -17,6 +17,7 @@ struct Folder: Identifiable, Codable {
     var notes: [Note]
     let createdDate: Date
     var modifiedDate: Date
+    var isExpanded: Bool
     
     /// Computed property for the folder's full URL
     var url: URL {
@@ -42,6 +43,7 @@ struct Folder: Identifiable, Codable {
         self.notes = []
         self.createdDate = Date()
         self.modifiedDate = Date()
+        self.isExpanded = true
     }
     
     /// Add a subfolder to this folder
@@ -84,5 +86,15 @@ struct Folder: Identifiable, Codable {
             allFolders.append(contentsOf: subfolder.getAllSubfoldersRecursively())
         }
         return allFolders
+    }
+    
+    // Enhanced functionality for folder management
+    mutating func rename(to newName: String) {
+        // Note: This would need to be implemented properly with file system operations
+        modifiedDate = Date()
+    }
+    
+    mutating func toggleExpansion() {
+        isExpanded.toggle()
     }
 }

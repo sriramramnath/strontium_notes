@@ -18,26 +18,26 @@ struct ObsidianWelcomeView: View {
             VStack(spacing: 20) {
                 ZStack {
                     Circle()
-                        .fill(Color.red.opacity(0.1))
+                        .fill(Color.accent.opacity(0.1))
                         .frame(width: 120, height: 120)
                     
                     Circle()
-                        .stroke(Color.red.opacity(0.3), lineWidth: 2)
+                        .stroke(Color.accent.opacity(0.3), lineWidth: 2)
                         .frame(width: 120, height: 120)
                     
                     Image(systemName: "doc.richtext")
                         .font(.system(size: 48, weight: .light))
-                        .foregroundColor(.red)
+                        .foregroundColor(.accent)
                 }
                 
                 VStack(spacing: 4) {
                     Text("Strontium Notes")
                         .font(.system(size: 32, weight: .thin))
-                        .foregroundColor(.white)
+                        .foregroundColor(.primaryText)
                     
                     Text("Knowledge Management")
                         .font(.system(size: 14, weight: .medium))
-                        .foregroundColor(.red.opacity(0.8))
+                        .foregroundColor(.accent.opacity(0.8))
                         .tracking(2)
                 }
             }
@@ -46,11 +46,11 @@ struct ObsidianWelcomeView: View {
             VStack(spacing: 12) {
                 Text("Welcome to your digital workspace")
                     .font(.system(size: 18, weight: .medium))
-                    .foregroundColor(.white.opacity(0.9))
+                    .foregroundColor(.primaryText)
                 
                 Text("Create, organize, and connect your thoughts with powerful markdown editing")
                     .font(.system(size: 14))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondaryText)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .frame(maxWidth: 400)
@@ -71,7 +71,7 @@ struct ObsidianWelcomeView: View {
                         .buttonStyle(ObsidianGrayButtonStyle())
                         
                         Button("Settings") {
-                            appViewModel.showingPreferences = true
+                            appViewModel.presentedSheet = .preferences
                         }
                         .buttonStyle(ObsidianGrayButtonStyle())
                     }
@@ -96,15 +96,15 @@ struct ObsidianWelcomeView: View {
             VStack(spacing: 4) {
                 Text("Strontium Notes")
                     .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(.gray.opacity(0.6))
+                    .foregroundColor(.tertiaryText)
                 
                 Text("A minimalist knowledge management app")
                     .font(.system(size: 11))
-                    .foregroundColor(.gray.opacity(0.5))
+                    .foregroundColor(.tertiaryText)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
+        .background(Color.primaryBackground)
     }
 }
 

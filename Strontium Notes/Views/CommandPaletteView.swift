@@ -12,6 +12,7 @@ struct CommandPaletteView: View {
     @Binding var isPresented: Bool
     @State private var searchText = ""
     @State private var selectedIndex = 0
+    @FocusState private var isSearchFocused: Bool
     
     private var filteredCommands: [Command] {
         let allCommands = Command.allCommands
@@ -30,19 +31,20 @@ struct CommandPaletteView: View {
             HStack(spacing: 12) {
                 Image(systemName: "command")
                     .font(.system(size: 16))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondaryText)
                 
                 TextField("Type a command...", text: $searchText)
                     .textFieldStyle(.plain)
                     .font(.system(size: 16))
-                    .foregroundColor(.white)
+                    .foregroundColor(.primaryText)
+                    .focused($isSearchFocused)
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
-            .background(Color.black)
+            .background(Color.secondaryBackground)
             
             Rectangle()
-                .fill(Color.gray.opacity(0.3))
+                .fill(Color.primaryBorder)
                 .frame(height: 1)
             
             // Commands list
@@ -60,15 +62,38 @@ struct CommandPaletteView: View {
             }
             .frame(maxHeight: 300)
         }
-        .background(Color.black)
+        .background(Color.primaryBackground)
         .cornerRadius(8)
-        .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
+        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
         .frame(width: 500)
         .onAppear {
             selectedIndex = 0
+            isSearchFocused = true
         }
         .onChange(of: searchText) { _, _ in
             selectedIndex = 0
+        }
+        .onKeyPress(.escape) {
+            isPresented = false
+            return .handled
+        }
+        .onKeyPress(.downArrow) {
+            if selectedIndex < filteredCommands.count - 1 {
+                selectedIndex += 1
+            }
+            return .handled
+        }
+        .onKeyPress(.upArrow) {
+            if selectedIndex > 0 {
+                selectedIndex -= 1
+            }
+            return .handled
+        }
+        .onKeyPress(.return) {
+            if !filteredCommands.isEmpty {
+                executeCommand(filteredCommands[selectedIndex])
+            }
+            return .handled
         }
     }
     
@@ -81,7 +106,7 @@ struct CommandPaletteView: View {
         case .search:
             appViewModel.selectedSidebarItem = .search
         case .settings:
-            appViewModel.showingPreferences = true
+            appViewModel.presentedSheet = .preferences
         case .toggleSidebar:
             appViewModel.showRightSidebar.toggle()
         case .switchToEdit:
@@ -98,24 +123,25 @@ struct CommandRowView: View {
     let command: Command
     let isSelected: Bool
     let action: () -> Void
+    @State private var isHovered = false
     
     var body: some View {
         Button(action: action) {
             HStack(spacing: 12) {
                 Image(systemName: command.icon)
                     .font(.system(size: 14))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.secondaryText)
                     .frame(width: 20)
                 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(command.title)
                         .font(.system(size: 14, weight: .medium))
-                        .foregroundColor(.white)
+                        .foregroundColor(.primaryText)
                     
                     if !command.description.isEmpty {
                         Text(command.description)
                             .font(.system(size: 12))
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondaryText)
                     }
                 }
                 
@@ -124,19 +150,25 @@ struct CommandRowView: View {
                 if let shortcut = command.shortcut {
                     Text(shortcut)
                         .font(.system(size: 11, design: .monospaced))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.tertiaryText)
                         .padding(.horizontal, 6)
                         .padding(.vertical, 2)
-                        .background(Color.gray.opacity(0.2))
+                        .background(Color.tertiaryBackground)
                         .cornerRadius(3)
                 }
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
-            .background(isSelected ? Color.red.opacity(0.8) : Color.clear)
+            .background(
+                isSelected ? Color.accent.opacity(0.8) : 
+                isHovered ? Color.secondaryBackground : Color.clear
+            )
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .onHover { hovering in
+            isHovered = hovering
+        }
     }
 }
 

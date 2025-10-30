@@ -22,7 +22,7 @@ struct ObsidianEditorView: View {
                 statusBarView
             }
         }
-        .background(Color.black)
+        .background(Color.primaryBackground)
     }
     
     private func headerBarView(for note: Note) -> some View {
@@ -34,22 +34,22 @@ struct ObsidianEditorView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
-        .background(Color.black)
+        .background(Color.primaryBackground)
     }
     
     private func breadcrumbView(for note: Note) -> some View {
         HStack(spacing: 4) {
             Text("Strontium Notes")
                 .font(.system(size: 12))
-                .foregroundColor(.gray)
+                .foregroundColor(.secondaryText)
             
             Image(systemName: "chevron.right")
                 .font(.system(size: 10))
-                .foregroundColor(.gray)
+                .foregroundColor(.tertiaryText)
             
             Text(note.title)
                 .font(.system(size: 12, weight: .medium))
-                .foregroundColor(.white)
+                .foregroundColor(.primaryText)
         }
     }
     
@@ -65,27 +65,27 @@ struct ObsidianEditorView: View {
                     VStack(spacing: 2) {
                         Image(systemName: mode.systemImage)
                             .font(.system(size: 11))
-                            .foregroundColor(appViewModel.editorMode == mode ? .white : .gray)
+                            .foregroundColor(appViewModel.editorMode == mode ? .white : .secondaryText)
                         
                         Text(mode.displayName)
                             .font(.system(size: 9, weight: .medium))
-                            .foregroundColor(appViewModel.editorMode == mode ? .white : .gray)
+                            .foregroundColor(appViewModel.editorMode == mode ? .white : .secondaryText)
                     }
                     .frame(width: 50, height: 32)
                     .background(
-                        RoundedRectangle(cornerRadius: 4)
-                            .fill(appViewModel.editorMode == mode ? Color.red : Color.clear)
+                        RoundedRectangle(cornerRadius: 6)
+                            .fill(appViewModel.editorMode == mode ? Color.accent : Color.clear)
                     )
                 }
                 .buttonStyle(.plain)
             }
         }
         .background(
-            RoundedRectangle(cornerRadius: 6)
-                .fill(Color.gray.opacity(0.1))
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.tertiaryBackground)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.primaryBorder, lineWidth: 1)
                 )
         )
         .padding(2)
@@ -100,7 +100,7 @@ struct ObsidianEditorView: View {
         } label: {
             Image(systemName: "ellipsis")
                 .font(.system(size: 12))
-                .foregroundColor(.gray)
+                .foregroundColor(.secondaryText)
                 .frame(width: 20, height: 20)
         }
         .menuStyle(.borderlessButton)
@@ -117,53 +117,91 @@ struct ObsidianEditorView: View {
         Group {
             switch appViewModel.editorMode {
             case .wysiwym:
-                // Use simple text editor for now to ensure visibility
-                ZStack(alignment: .topLeading) {
-                    if editedContent.isEmpty {
-                        Text("Start typing to create your note...")
-                            .font(.system(size: 14))
-                            .foregroundColor(.gray.opacity(0.6))
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 24)
-                    }
-                    
-                    ScrollView {
-                        TextEditor(text: $editedContent)
-                            .font(.system(size: 14))
-                            .scrollContentBackground(.hidden)
-                            .background(Color.clear)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 16)
+                // Clean Notion-style editor
+                NotionEditor(text: $editedContent, isEditing: $isEditing) { newText in
+                    editedContent = newText
+                    Task {
+                        await saveNoteAsync()
                     }
                 }
-                .background(Color.black)
             case .edit:
-                ObsidianTextEditor(content: $editedContent, isEditing: $isEditing, isTextEditorFocused: $isTextEditorFocused) {
-                    saveNote()
-                    appViewModel.editorMode = .preview
-                }
+                // Simple text editor
+                TextEditor(text: $editedContent)
+                    .font(.system(size: 16))
+                    .foregroundColor(.primaryText)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.primaryBackground)
+                    .padding()
+                    .focused($isTextEditorFocused)
+                    .onChange(of: editedContent) { _, _ in
+                        isEditing = true
+                    }
+                    .onChangeDebounced(of: editedContent, delay: 0.15) { newContent in
+                        Task {
+                            await saveNoteAsync()
+                        }
+                    }
             case .preview:
-                ObsidianPreviewView(content: editedContent) {
+                ScrollView {
+                    Text(editedContent)
+                        .font(.system(size: 16))
+                        .foregroundColor(.primaryText)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .background(Color.primaryBackground)
+                .onTapGesture {
                     appViewModel.editorMode = .edit
                     isTextEditorFocused = true
                 }
             case .livePreview:
-                ObsidianLivePreviewEditor(content: $editedContent, isEditing: $isEditing) {
-                    saveNote()
-                }
+                // Simple text editor for now
+                TextEditor(text: $editedContent)
+                    .font(.system(size: 16))
+                    .foregroundColor(.primaryText)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.primaryBackground)
+                    .padding()
+                    .focused($isTextEditorFocused)
+                    .onChange(of: editedContent) { _, _ in
+                        isEditing = true
+                    }
+                    .onChangeDebounced(of: editedContent, delay: 0.15) { newContent in
+                        Task {
+                            await saveNoteAsync()
+                        }
+                    }
             }
         }
         .onAppear {
             editedContent = note.content
         }
-        .onChange(of: editedContent) { _, _ in
-            isEditing = true
+        .onChange(of: appViewModel.selectedNote?.id) { _, _ in
+            if let note = appViewModel.selectedNote {
+                editedContent = note.content
+                isEditing = false
+            }
         }
     }
     
     private func saveNote() {
-        // TODO: Save the note
+        Task {
+            await saveNoteAsync()
+        }
+    }
+    
+    private func saveNoteAsync() async {
+        guard let note = appViewModel.selectedNote else { return }
+        
+        // Update the note content
+        let updatedNote = Note(
+            filePath: note.filePath,
+            title: note.title,
+            content: editedContent
+        )
+        
+        // Save through the app view model
+        await appViewModel.saveNote(updatedNote)
         isEditing = false
     }
     
@@ -183,11 +221,11 @@ struct ObsidianEditorView: View {
             HStack(spacing: 12) {
                 Text("\(wordCount) words")
                     .font(.system(size: 11))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.tertiaryText)
                 
                 Text("\(characterCount) chars")
                     .font(.system(size: 11))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.tertiaryText)
             }
             
             Spacer()
@@ -214,7 +252,7 @@ struct ObsidianEditorView: View {
                         .frame(width: 6, height: 6)
                     Text("All changes saved")
                         .font(.system(size: 11))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.tertiaryText)
                 }
             }
         }
@@ -222,10 +260,10 @@ struct ObsidianEditorView: View {
         .padding(.vertical, 10)
         .background(
             Rectangle()
-                .fill(Color.gray.opacity(0.05))
+                .fill(Color.secondaryBackground)
                 .overlay(
                     Rectangle()
-                        .fill(Color.gray.opacity(0.2))
+                        .fill(Color.primaryBorder)
                         .frame(height: 1),
                     alignment: .top
                 )

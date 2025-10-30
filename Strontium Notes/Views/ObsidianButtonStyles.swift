@@ -40,12 +40,17 @@ struct ObsidianRedButtonStyle: ButtonStyle {
             .foregroundColor(.white)
             .padding(size.padding)
             .background(
-                Rectangle()
-                    .fill(configuration.isPressed ? Color.red.opacity(0.8) : Color.red)
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(configuration.isPressed ? Color.accent.opacity(0.8) : Color.accent)
+                    .shadow(
+                        color: Color.accent.opacity(0.3),
+                        radius: configuration.isPressed ? 2 : 4,
+                        x: 0,
+                        y: configuration.isPressed ? 1 : 2
+                    )
             )
-            .clipShape(RoundedRectangle(cornerRadius: 3))
-            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
-            .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
+            .scaleEffect(configuration.isPressed ? 0.96 : 1.0)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: configuration.isPressed)
     }
 }
 
@@ -79,18 +84,23 @@ struct ObsidianGrayButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: size.fontSize, weight: .medium))
-            .foregroundColor(.white)
+            .foregroundColor(.primaryText)
             .padding(size.padding)
             .background(
-                Rectangle()
-                    .fill(configuration.isPressed ? Color.gray.opacity(0.4) : Color.gray.opacity(0.2))
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(configuration.isPressed ? Color.tertiaryBackground : Color.secondaryBackground)
                     .overlay(
-                        Rectangle()
-                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.primaryBorder, lineWidth: 1)
+                    )
+                    .shadow(
+                        color: Color.black.opacity(0.1),
+                        radius: configuration.isPressed ? 1 : 3,
+                        x: 0,
+                        y: configuration.isPressed ? 0 : 1
                     )
             )
-            .clipShape(RoundedRectangle(cornerRadius: 3))
-            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
-            .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
+            .scaleEffect(configuration.isPressed ? 0.96 : 1.0)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: configuration.isPressed)
     }
 }

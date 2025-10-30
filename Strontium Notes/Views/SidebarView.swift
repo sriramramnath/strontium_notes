@@ -70,6 +70,10 @@ struct SidebarView: View {
                         TagsView(appViewModel: appViewModel)
                     case .backlinks:
                         BacklinksView(appViewModel: appViewModel)
+                    case .daily:
+                        DailyNotesView(appViewModel: appViewModel)
+                    case .stats:
+                        StatisticsView(appViewModel: appViewModel)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -17,7 +17,7 @@ struct ObsidianSidebarView: View {
             HStack(spacing: 8) {
                 Text("Strontium Notes")
                     .font(.system(size: 14, weight: .medium))
-                    .foregroundColor(.white)
+                    .foregroundColor(.primaryText)
                 
                 Spacer()
                 
@@ -31,10 +31,10 @@ struct ObsidianSidebarView: View {
                     }
                     Divider()
                     Button("Settings") {
-                        appViewModel.showingPreferences = true
+                        appViewModel.presentedSheet = .preferences
                     }
                     Button("About") {
-                        appViewModel.showingAbout = true
+                        appViewModel.presentedSheet = .about
                     }
                 } label: {
                     Image(systemName: "ellipsis")
@@ -47,7 +47,7 @@ struct ObsidianSidebarView: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
-            .background(Color.black)
+            .background(Color.secondaryBackground)
             
             // Divider
             Rectangle()
@@ -56,10 +56,14 @@ struct ObsidianSidebarView: View {
             
             if appViewModel.currentVault != nil {
                 // Tab bar for different views
-                HStack(spacing: 0) {
-                    ForEach([SidebarItem.files, SidebarItem.search], id: \.rawValue) { item in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 0) {
+                        ForEach([SidebarItem.files, SidebarItem.search, SidebarItem.tags, SidebarItem.backlinks, SidebarItem.daily, SidebarItem.stats], id: \.rawValue) { item in
                         Button {
-                            appViewModel.selectedSidebarItem = item
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                appViewModel.selectedSidebarItem = item
+                            }
+                            HapticManager.shared.selectionChanged()
                         } label: {
                             HStack(spacing: 6) {
                                 Image(systemName: item.systemImage)
@@ -72,33 +76,37 @@ struct ObsidianSidebarView: View {
                             .padding(.vertical, 8)
                             .background(
                                 Rectangle()
-                                    .fill(appViewModel.selectedSidebarItem == item ? Color.gray.opacity(0.2) : Color.clear)
+                                    .fill(appViewModel.selectedSidebarItem == item ? Color.accent.opacity(0.3) : Color.clear)
                             )
                         }
                         .buttonStyle(.plain)
-                    }
-                    
-                    Spacer()
-                    
-                    // New note button
+                        }
+                        
+                        Spacer()
+                        
+                        // New note button
                     Button {
-                        appViewModel.createNewNote()
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+                            appViewModel.createNewNote()
+                        }
+                        HapticManager.shared.mediumImpact()
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 11, weight: .medium))
                             .foregroundColor(.white)
                             .frame(width: 22, height: 22)
                             .background(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .fill(Color.red)
-                                    .shadow(color: Color.red.opacity(0.3), radius: 2, x: 0, y: 1)
+                                RoundedRectangle(cornerRadius: 6)
+                                    .fill(Color.accent)
+                                    .shadow(color: Color.accent.opacity(0.3), radius: 3, x: 0, y: 2)
                             )
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(BouncyButtonStyle())
                     .padding(.trailing, 12)
+                    }
                 }
                 .padding(.vertical, 8)
-                .background(Color.black)
+                .background(Color.secondaryBackground)
                 
                 Rectangle()
                     .fill(Color.gray.opacity(0.3))
@@ -108,14 +116,25 @@ struct ObsidianSidebarView: View {
                 Group {
                     switch appViewModel.selectedSidebarItem {
                     case .files:
-                        ObsidianFilesView(appViewModel: appViewModel)
+                        FilesView(appViewModel: appViewModel)
                     case .search:
-                        ObsidianSearchView(appViewModel: appViewModel)
-                    default:
-                        ObsidianFilesView(appViewModel: appViewModel)
+                        SearchView(appViewModel: appViewModel)
+                    case .tags:
+                        TagsView(appViewModel: appViewModel)
+                    case .backlinks:
+                        BacklinksView(appViewModel: appViewModel)
+                    case .daily:
+                        DailyNotesView(appViewModel: appViewModel)
+                    case .stats:
+                        StatisticsView(appViewModel: appViewModel)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .transition(.asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                ))
+                .animation(.easeInOut(duration: 0.3), value: appViewModel.selectedSidebarItem)
             } else {
                 // No vault state
                 VStack(spacing: 16) {
@@ -165,7 +184,7 @@ struct ObsidianFilesView: View {
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
         }
-        .background(Color.black)
+        .background(Color.secondaryBackground)
     }
 }
 
@@ -181,8 +200,10 @@ struct ObsidianFileRowView: View {
         HStack(spacing: 8) {
             Image(systemName: "doc.text")
                 .font(.system(size: 12))
-                .foregroundColor(isSelected ? .white : .gray)
+                .foregroundColor(isSelected ? .white : .secondaryText)
                 .frame(width: 16)
+                .scaleEffect(isSelected ? 1.1 : 1.0)
+                .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isSelected)
             
             if isEditing {
                 TextField("Note title", text: $editedTitle)
@@ -197,14 +218,18 @@ struct ObsidianFileRowView: View {
                     }
             } else {
                 Text(note.title)
-                    .font(.system(size: 13))
-                    .foregroundColor(.white)
+                    .font(.system(size: 13, weight: isSelected ? .medium : .regular))
+                    .foregroundColor(isSelected ? .white : .primaryText)
                     .lineLimit(1)
                     .onTapGesture(count: 2) {
-                        startEditing()
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                            startEditing()
+                        }
                     }
                     .onTapGesture(count: 1) {
-                        action()
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            action()
+                        }
                     }
             }
             

@@ -39,7 +39,7 @@ struct Note: Identifiable, Codable {
         fileExtension.lowercased() == "md" || fileExtension.lowercased() == "markdown"
     }
     
-    init(filePath: String, title: String, content: String, frontmatter: [String: Any] = [:]) {
+    init(filePath: String, title: String, content: String, frontmatter: [String: Any] = [:], folderId: UUID? = nil) {
         self.id = UUID()
         self.filePath = filePath
         self.title = title
@@ -49,6 +49,23 @@ struct Note: Identifiable, Codable {
         self.createdDate = Date()
         self.tags = Note.extractTags(from: content)
         self.fileSize = Int64(content.utf8.count)
+    }
+    
+    /// Get all wikilinks from the note content
+    func getLinks() -> [String] {
+        let pattern = #"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]"#
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return []
+        }
+        
+        let nsString = content as NSString
+        let matches = regex.matches(in: content, options: [], range: NSRange(location: 0, length: nsString.length))
+        
+        return matches.compactMap { match in
+            let targetRange = match.range(at: 1)
+            guard targetRange.location != NSNotFound else { return nil }
+            return nsString.substring(with: targetRange)
+        }
     }
     
     /// Extract tags from note content using #tag syntax
@@ -61,6 +78,18 @@ struct Note: Identifiable, Codable {
             guard let range = Range(match.range(at: 1), in: content) else { return nil }
             return String(content[range])
         })
+    }
+    
+    /// Computed property for word count
+    var wordCount: Int {
+        let words = content.components(separatedBy: .whitespacesAndNewlines)
+            .filter { !$0.isEmpty }
+        return words.count
+    }
+    
+    /// Computed property for character count
+    var characterCount: Int {
+        return content.count
     }
 }
 

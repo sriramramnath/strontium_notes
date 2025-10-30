@@ -23,6 +23,10 @@ struct FilesView: View {
                 Button(action: appViewModel.createNewNote) {
                     Image(systemName: "plus")
                         .font(.caption)
+                        .foregroundColor(.white)
+                        .padding(6)
+                        .background(Color.accent)
+                        .clipShape(Circle())
                 }
                 .buttonStyle(.borderless)
                 .help("Create New Note")
@@ -32,28 +36,73 @@ struct FilesView: View {
             
             Divider()
             
-            // File tree
+            // File list - simple version
             ScrollView {
-                LazyVStack(alignment: .leading, spacing: 2) {
-                    // Folders
-                    ForEach(appViewModel.mockFolders) { folder in
-                        FolderRowView(folder: folder, appViewModel: appViewModel)
+                LazyVStack(alignment: .leading, spacing: 4) {
+                    ForEach(appViewModel.mockNotes) { note in
+                        SimpleNoteRow(
+                            note: note,
+                            isSelected: appViewModel.selectedNote?.id == note.id,
+                            onSelect: {
+                                appViewModel.selectNote(note)
+                            }
+                        )
                     }
                     
-                    // Root level notes
-                    ForEach(appViewModel.mockNotes.filter { !$0.filePath.contains("/") }) { note in
-                        NoteRowView(
-                            note: note,
-                            isSelected: appViewModel.selectedNote?.id == note.id
-                        ) {
-                            appViewModel.selectNote(note)
+                    if appViewModel.mockNotes.isEmpty {
+                        VStack(spacing: 12) {
+                            Image(systemName: "doc.text")
+                                .font(.system(size: 32))
+                                .foregroundColor(.gray)
+                            
+                            Text("No notes yet")
+                                .font(.system(size: 14))
+                                .foregroundColor(.gray)
+                            
+                            Button("Create your first note") {
+                                appViewModel.createNewNote()
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.accent)
                         }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 40)
                     }
                 }
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
             }
         }
+    }
+}
+
+struct SimpleNoteRow: View {
+    let note: Note
+    let isSelected: Bool
+    let onSelect: () -> Void
+    
+    var body: some View {
+        Button(action: onSelect) {
+            HStack(spacing: 8) {
+                Image(systemName: "doc.text")
+                    .font(.system(size: 12))
+                    .foregroundColor(isSelected ? .accent : .secondary)
+                
+                Text(note.title)
+                    .font(.system(size: 13))
+                    .foregroundColor(isSelected ? .accent : .primary)
+                    .lineLimit(1)
+                
+                Spacer()
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 6)
+                    .fill(isSelected ? Color.accent.opacity(0.1) : Color.clear)
+            )
+        }
+        .buttonStyle(.plain)
     }
 }
 
