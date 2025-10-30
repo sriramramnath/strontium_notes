@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 /// Utility class for debouncing rapid events
 class Debouncer {

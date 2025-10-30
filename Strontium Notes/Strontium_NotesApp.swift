@@ -15,7 +15,7 @@ struct Strontium_NotesApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(themeManager)
-                .preferredColorScheme(themeManager.preferredColorScheme)
+                .preferredColorScheme(.dark) // Force dark mode for VS Code look
         }
         .commands {
             CommandGroup(after: .newItem) {

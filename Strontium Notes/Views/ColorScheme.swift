@@ -8,39 +8,40 @@
 import SwiftUI
 
 extension Color {
-    // Adaptive color scheme that supports both light and dark modes
+    // Obsidian-inspired color scheme matching the exact dark theme
     
-    // Background colors
+    // Background colors - Exact Obsidian dark theme
     static let primaryBackground = Color("PrimaryBackground", bundle: nil)
-        .fallback(light: Color(red: 0.98, green: 0.98, blue: 0.98), dark: Color(red: 0.11, green: 0.11, blue: 0.12))
+        .fallback(light: Color(red: 0.98, green: 0.98, blue: 0.98), dark: Color(red: 0.118, green: 0.118, blue: 0.118)) // #1e1e1e
     
     static let secondaryBackground = Color("SecondaryBackground", bundle: nil)
-        .fallback(light: Color(red: 0.95, green: 0.95, blue: 0.95), dark: Color(red: 0.14, green: 0.14, blue: 0.15))
+        .fallback(light: Color(red: 0.95, green: 0.95, blue: 0.95), dark: Color(red: 0.157, green: 0.157, blue: 0.157)) // #282828
     
     static let tertiaryBackground = Color("TertiaryBackground", bundle: nil)
-        .fallback(light: Color(red: 0.92, green: 0.92, blue: 0.92), dark: Color(red: 0.17, green: 0.17, blue: 0.18))
+        .fallback(light: Color(red: 0.92, green: 0.92, blue: 0.92), dark: Color(red: 0.196, green: 0.196, blue: 0.196)) // #323232
     
-    // Text colors
+    // Text colors - Exact Obsidian text colors
     static let primaryText = Color("PrimaryText", bundle: nil)
-        .fallback(light: Color(red: 0.1, green: 0.1, blue: 0.1), dark: Color(red: 0.95, green: 0.95, blue: 0.95))
+        .fallback(light: Color(red: 0.1, green: 0.1, blue: 0.1), dark: Color(red: 0.863, green: 0.863, blue: 0.863)) // #dcdcdc
     
     static let secondaryText = Color("SecondaryText", bundle: nil)
-        .fallback(light: Color(red: 0.4, green: 0.4, blue: 0.4), dark: Color(red: 0.7, green: 0.7, blue: 0.7))
+        .fallback(light: Color(red: 0.4, green: 0.4, blue: 0.4), dark: Color(red: 0.667, green: 0.667, blue: 0.667)) // #aaaaaa
     
     static let tertiaryText = Color("TertiaryText", bundle: nil)
-        .fallback(light: Color(red: 0.6, green: 0.6, blue: 0.6), dark: Color(red: 0.5, green: 0.5, blue: 0.5))
+        .fallback(light: Color(red: 0.6, green: 0.6, blue: 0.6), dark: Color(red: 0.502, green: 0.502, blue: 0.502)) // #808080
     
-    // Accent colors (same in both modes)
-    static let accent = Color(red: 0.95, green: 0.26, blue: 0.21) // Red accent
-    static let destructive = Color(red: 0.8, green: 0.1, blue: 0.1) // Darker red for destructive
-    static let success = Color(red: 0.2, green: 0.8, blue: 0.4)
+    // Accent colors - Obsidian purple accent
+    static let accent = Color(red: 0.588, green: 0.353, blue: 0.902) // #9656e6 - Obsidian purple
+    static let accentHover = Color(red: 0.647, green: 0.451, blue: 0.922) // Lighter purple for hover
+    static let destructive = Color(red: 0.902, green: 0.298, blue: 0.235) // #e64c3c
+    static let success = Color(red: 0.18, green: 0.8, blue: 0.443) // #2ecc71
     
-    // Border colors
+    // Border colors - Exact Obsidian borders
     static let primaryBorder = Color("PrimaryBorder", bundle: nil)
-        .fallback(light: Color(red: 0.85, green: 0.85, blue: 0.85), dark: Color(red: 0.25, green: 0.25, blue: 0.26))
+        .fallback(light: Color(red: 0.85, green: 0.85, blue: 0.85), dark: Color(red: 0.235, green: 0.235, blue: 0.235)) // #3c3c3c
     
     static let secondaryBorder = Color("SecondaryBorder", bundle: nil)
-        .fallback(light: Color(red: 0.9, green: 0.9, blue: 0.9), dark: Color(red: 0.2, green: 0.2, blue: 0.21))
+        .fallback(light: Color(red: 0.9, green: 0.9, blue: 0.9), dark: Color(red: 0.196, green: 0.196, blue: 0.196)) // #323232
     
     // Helper for fallback colors
     func fallback(light: Color, dark: Color) -> Color {

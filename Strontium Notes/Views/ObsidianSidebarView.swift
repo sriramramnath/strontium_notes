@@ -14,9 +14,9 @@ struct ObsidianSidebarView: View {
     var body: some View {
         VStack(spacing: 0) {
             // Header with vault name and controls
-            HStack(spacing: 8) {
+            HStack(spacing: ObsidianUI.smallSpacing) {
                 Text("Strontium Notes")
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: ObsidianUI.bodyFont, weight: .medium))
                     .foregroundColor(.primaryText)
                 
                 Spacer()
@@ -38,21 +38,22 @@ struct ObsidianSidebarView: View {
                     }
                 } label: {
                     Image(systemName: "ellipsis")
-                        .font(.system(size: 12))
-                        .foregroundColor(.gray)
-                        .frame(width: 20, height: 20)
+                        .font(.system(size: ObsidianUI.smallFont))
+                        .foregroundColor(.secondaryText)
+                        .frame(width: ObsidianUI.largeIcon, height: ObsidianUI.largeIcon)
                 }
                 .menuStyle(.borderlessButton)
                 .menuIndicator(.hidden)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .padding(.horizontal, ObsidianUI.largeSpacing)
+            .padding(.vertical, ObsidianUI.mediumSpacing)
+            .frame(height: ObsidianUI.sidebarHeaderHeight)
             .background(Color.secondaryBackground)
             
             // Divider
             Rectangle()
-                .fill(Color.gray.opacity(0.3))
-                .frame(height: 1)
+                .fill(Color.primaryBorder)
+                .frame(height: ObsidianUI.thinBorder)
             
             if appViewModel.currentVault != nil {
                 // Tab bar for different views
@@ -101,7 +102,7 @@ struct ObsidianSidebarView: View {
                                     .shadow(color: Color.accent.opacity(0.3), radius: 3, x: 0, y: 2)
                             )
                     }
-                    .buttonStyle(BouncyButtonStyle())
+                    .buttonStyle(.plain)
                     .padding(.trailing, 12)
                     }
                 }
@@ -116,15 +117,15 @@ struct ObsidianSidebarView: View {
                 Group {
                     switch appViewModel.selectedSidebarItem {
                     case .files:
-                        FilesView(appViewModel: appViewModel)
+                        ObsidianFilesView(appViewModel: appViewModel)
                     case .search:
-                        SearchView(appViewModel: appViewModel)
+                        ObsidianSearchView(appViewModel: appViewModel)
                     case .tags:
                         TagsView(appViewModel: appViewModel)
                     case .backlinks:
                         BacklinksView(appViewModel: appViewModel)
                     case .daily:
-                        DailyNotesView(appViewModel: appViewModel)
+                        DailyNotesPlaceholderView()
                     case .stats:
                         StatisticsView(appViewModel: appViewModel)
                     }
@@ -394,6 +395,27 @@ struct ObsidianSearchResultView: View {
     private var contentSnippet: String {
         let content = note.content.replacingOccurrences(of: "\n", with: " ")
         return String(content.prefix(100))
+    }
+}
+
+// Placeholder view for Daily Notes (to be implemented)
+struct DailyNotesPlaceholderView: View {
+    var body: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "calendar")
+                .font(.system(size: 32))
+                .foregroundColor(.secondaryText)
+            
+            Text("Daily Notes")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primaryText)
+            
+            Text("Coming soon")
+                .font(.system(size: 12))
+                .foregroundColor(.tertiaryText)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.primaryBackground)
     }
 }
 

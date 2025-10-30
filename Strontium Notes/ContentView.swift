@@ -12,42 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
-        HStack(spacing: 0) {
-            // Left Sidebar - File Explorer
-            ObsidianSidebarView(appViewModel: appViewModel)
-                .frame(width: 280)
-            
-            // Vertical Divider
-            Rectangle()
-                .fill(Color.primaryBorder)
-                .frame(width: 1)
-            
-            // Main Content Area with smooth transitions
-            Group {
-                if appViewModel.selectedNote != nil {
-                    ObsidianEditorView(appViewModel: appViewModel)
-                        .transition(.asymmetric(
-                            insertion: .move(edge: .trailing).combined(with: .opacity),
-                            removal: .move(edge: .leading).combined(with: .opacity)
-                        ))
-                } else {
-                    ObsidianWelcomeView(appViewModel: appViewModel)
-                        .transition(.opacity.combined(with: .scale(scale: 0.95)))
-                }
-            }
-            .animation(.easeInOut(duration: 0.4), value: appViewModel.selectedNote?.id)
-            
-            // Right Sidebar - Backlinks/Outline (collapsible)
-            if appViewModel.showRightSidebar {
-                Rectangle()
-                    .fill(Color.primaryBorder)
-                    .frame(width: 1)
-                
-                ObsidianRightSidebarView(appViewModel: appViewModel)
-                    .frame(width: 280)
-            }
-        }
-        .background(Color.primaryBackground)
+        VSCodeStyleView(appViewModel: appViewModel)
         .onReceive(NotificationCenter.default.publisher(for: .createNewNote)) { _ in
             appViewModel.createNewNote()
         }
