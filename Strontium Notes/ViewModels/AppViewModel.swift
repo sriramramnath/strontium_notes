@@ -83,24 +83,9 @@ class AppViewModel: ObservableObject {
     }
     
     private func autoOpenDefaultVault() async {
-        // Try to open the most recent vault or create a default one
-        if let recentVault = recentVaults.first {
-            let vaultURL = URL(fileURLWithPath: recentVault.path)
-            if FileManager.default.fileExists(atPath: vaultURL.path) {
-                await openVault(at: vaultURL)
-                return
-            }
-        }
-        
-        // Create default vault if none exists
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let defaultVaultURL = documentsURL.appendingPathComponent("Strontium Notes")
-        
-        if !FileManager.default.fileExists(atPath: defaultVaultURL.path) {
-            await createVault(name: "Strontium Notes", at: documentsURL)
-        } else {
-            await openVault(at: defaultVaultURL)
-        }
+        // Don't auto-open any vault - user must explicitly choose a folder
+        // This ensures only local folder opening is available
+        currentVault = nil
     }
     
     private func setupBindings() {
@@ -283,101 +268,9 @@ class AppViewModel: ObservableObject {
     // MARK: - Mock Data Setup
     
     private func setupMockData() {
-        // Create mock vault
-        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let vaultURL = documentsURL.appendingPathComponent("Strontium Notes")
-        
-        currentVault = Vault(
-            name: "Strontium Notes",
-            rootURL: vaultURL
-        )
-        
-        // Create mock notes
-        mockNotes = [
-            Note(
-                filePath: "Getting Started.md",
-                title: "Getting Started",
-                content: """
-                # Getting Started with Strontium Notes
-                
-                Welcome to your new **knowledge management system**! Here are some tips to get you started:
-                
-                ## Creating Notes
-                - Use the **New Note** button to create a new note
-                - Notes are written in *Markdown format*
-                - You can link to other notes using [[Note Name]] syntax
-                - Add `inline code` for technical terms
-                
-                ## Organizing Your Knowledge
-                - Use #tags to categorize your notes
-                - Create folders to organize related notes
-                - Use the search function to quickly find information
-                
-                ## Advanced Features
-                - **Backlinks**: See which notes link to the current note
-                - **WYSIWYM Editor**: Edit with live markdown rendering
-                - **Templates**: Create reusable note templates
-                
-                ### Code Example
-                ```swift
-                let note = Note(title: "My Note", content: "Hello World")
-                ```
-                
-                Happy note-taking! 📝
-                """
-            ),
-            Note(
-                filePath: "Project Ideas.md",
-                title: "Project Ideas",
-                content: """
-                # Project Ideas
-                
-                A collection of interesting project ideas to explore:
-                
-                ## Software Projects
-                - [ ] Build a personal knowledge management app
-                - [ ] Create a habit tracking application
-                - [ ] Develop a markdown-based blog generator
-                
-                ## Learning Goals
-                - [ ] Master SwiftUI animations
-                - [ ] Learn about Core Data optimization
-                - [ ] Explore machine learning with CreateML
-                
-                #projects #ideas #todo
-                """
-            ),
-            Note(
-                filePath: "Daily Notes/2024-10-29.md",
-                title: "2024-10-29",
-                content: """
-                # Daily Note - October 29, 2024
-                
-                ## Today's Focus
-                - Working on [[Strontium Notes]] development
-                - Implementing the core UI components
-                - Testing the markdown editor functionality
-                
-                ## Ideas
-                - Consider adding a dark mode toggle
-                - Implement keyboard shortcuts for common actions
-                - Add support for custom themes
-                
-                ## Links
-                - Related to [[Project Ideas]]
-                - See also [[Getting Started]]
-                
-                #daily #development
-                """
-            )
-        ]
-        
-        // Create mock folders
-        mockFolders = [
-            Folder(name: "Daily Notes", path: "Daily Notes"),
-            Folder(name: "Projects", path: "Projects"),
-            Folder(name: "Resources", path: "Resources")
-        ]
+        // Don't create mock data - wait for user to open a folder
+        mockNotes = []
+        mockFolders = []
     }
     
     func getBacklinks(for note: Note) -> [Backlink] {
@@ -529,6 +422,8 @@ enum PresentedSheet: Identifiable {
     case createVault
     case preferences
     case about
+    case renameNote
+    case createFolder
     
     var id: String {
         switch self {
@@ -536,6 +431,8 @@ enum PresentedSheet: Identifiable {
         case .createVault: return "createVault"
         case .preferences: return "preferences"
         case .about: return "about"
+        case .renameNote: return "renameNote"
+        case .createFolder: return "createFolder"
         }
     }
 }

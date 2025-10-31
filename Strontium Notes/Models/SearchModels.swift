@@ -53,6 +53,12 @@ struct SearchResult: Identifiable {
         self.matchRanges = matchRanges
         self.tags = tags
     }
+    
+    // Computed properties for UI
+    var noteTitle: String { title }
+    var matchedContent: String { snippet }
+    var matchCount: Int { matchedTerms.count }
+    var score: Double { relevanceScore }
 }
 
 /// Represents a search query with advanced operators

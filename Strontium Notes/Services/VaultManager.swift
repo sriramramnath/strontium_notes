@@ -159,6 +159,7 @@ class VaultManager: VaultManagerProtocol, ObservableObject {
         
         var folderDict: [String: Folder] = [:]
         var notesList: [Note] = []
+        var foldersWithMarkdown: Set<String> = []
         
         while let fileURL = enumerator?.nextObject() as? URL {
             let relativePath = fileURL.path.replacingOccurrences(of: rootURL.path + "/", with: "")
@@ -169,8 +170,14 @@ class VaultManager: VaultManagerProtocol, ObservableObject {
                 let folderPath = relativePath
                 let folderName = fileURL.lastPathComponent
                 
-                // Skip hidden folders and attachments
-                if folderName.hasPrefix(".") || folderName == "attachments" {
+                // Skip hidden folders, system folders, and common non-note folders
+                if folderName.hasPrefix(".") || 
+                   folderName == "attachments" ||
+                   folderName == "node_modules" ||
+                   folderName.hasSuffix(".xcodeproj") ||
+                   folderName.hasSuffix(".xcassets") ||
+                   folderName.hasSuffix(".xcworkspace") {
+                    enumerator?.skipDescendants()
                     continue
                 }
                 
@@ -183,6 +190,15 @@ class VaultManager: VaultManagerProtocol, ObservableObject {
                     let title = fileURL.deletingPathExtension().lastPathComponent
                     let note = Note(filePath: relativePath, title: title, content: content)
                     notesList.append(note)
+                    
+                    // Mark parent folders as containing markdown
+                    var pathComponents = relativePath.components(separatedBy: "/")
+                    pathComponents.removeLast() // Remove filename
+                    var currentPath = ""
+                    for component in pathComponents {
+                        currentPath = currentPath.isEmpty ? component : currentPath + "/" + component
+                        foldersWithMarkdown.insert(currentPath)
+                    }
                 } catch {
                     // Skip files that can't be read
                     continue
@@ -190,8 +206,13 @@ class VaultManager: VaultManagerProtocol, ObservableObject {
             }
         }
         
+        // Only include folders that contain markdown files
+        let filteredFolders = folderDict.values.filter { folder in
+            foldersWithMarkdown.contains(folder.path)
+        }
+        
         vault.notes = notesList
-        vault.folders = Array(folderDict.values)
+        vault.folders = Array(filteredFolders)
     }
     
     private func loadRecentVaults() {

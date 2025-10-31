@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "DEVELOPER_GUIDE"
             }
+          },
+          {
+            "id": "5370f141a4d85bd0",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -41,7 +52,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -169,12 +180,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "04978790035db56b",
+  "active": "5370f141a4d85bd0",
   "lastOpenFiles": [
+    "Untitled Note 17.md",
+    "Untitled Note 16.md",
+    "Untitled Note 15.md",
+    "Untitled Note 14.md",
+    "Untitled Note 13.md",
+    "Untitled Note 12.md",
+    "Untitled.md",
+    "Markdown/DEVELOPER_GUIDE.md",
+    "Untitled",
     "Markdown/CODE_REVIEW.md",
     "Strontium Notes/Views/ObsidianMainView.swift",
     "OBSIDIAN_STYLING_GUIDE.md",
-    "Markdown/DEVELOPER_GUIDE.md",
     "Markdown/IMPROVEMENTS_SUMMARY.md",
     "Markdown/OBSIDIAN_STYLING_GUIDE.md",
     "Markdown/UI_FIXES.md",

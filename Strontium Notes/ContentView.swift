@@ -50,6 +50,10 @@ struct ContentView: View {
                 ObsidianPreferencesView(appViewModel: appViewModel)
             case .about:
                 ObsidianAboutView()
+            case .renameNote:
+                EmptyView() // Handled in VSCodeStyleView
+            case .createFolder:
+                EmptyView() // Handled in VSCodeStyleView
             }
         }
         .overlay(
