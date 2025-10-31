@@ -145,45 +145,36 @@ class AppViewModel: ObservableObject {
     }
     
     func createNewNote(in folderId: UUID? = nil) {
-        // Create note immediately with mock data for now
+        guard let vault = currentVault else { return }
+        
         let timestamp = Date().formatted(date: .abbreviated, time: .shortened)
-        let newNote = Note(
-            filePath: "Untitled Note \(mockNotes.count + 1).md",
-            title: "Untitled Note \(mockNotes.count + 1)",
-            content: "# Untitled Note\n\nCreated on \(timestamp)\n\nStart writing your thoughts here..."
-        )
+        let noteTitle = "Untitled Note \(mockNotes.count + 1)"
+        let noteContent = "# \(noteTitle)\n\nCreated on \(timestamp)\n\nStart writing your thoughts here..."
         
-        mockNotes.append(newNote)
-        selectedNote = newNote
-        editorMode = .edit
-        
-        // Also try to create it in the vault if one is open
-        if let vault = currentVault {
-            Task {
-                do {
-                    let savedNote = try await noteManager.createNote(
-                        title: newNote.title,
-                        content: newNote.content,
-                        in: vault,
-                        folderPath: nil
-                    )
-                    
-                    // Update the note with the saved version
-                    if let index = mockNotes.firstIndex(where: { $0.id == newNote.id }) {
-                        mockNotes[index] = savedNote
-                        if selectedNote?.id == newNote.id {
-                            selectedNote = savedNote
-                        }
-                    }
-                    
-                    // Refresh vault
-                    try await vaultManager.refreshCurrentVault()
-                    
-                    // Update search index
-                    await searchEngine.updateIndex(for: savedNote, in: vault)
-                } catch {
-                    ErrorHandler.log(error, context: "createNewNote")
+        Task {
+            do {
+                // Create the note directly in the vault
+                let savedNote = try await noteManager.createNote(
+                    title: noteTitle,
+                    content: noteContent,
+                    in: vault,
+                    folderPath: nil
+                )
+                
+                // Add to mock notes and select it
+                await MainActor.run {
+                    mockNotes.append(savedNote)
+                    selectedNote = savedNote
+                    editorMode = .edit
                 }
+                
+                // Refresh vault
+                try await vaultManager.refreshCurrentVault()
+                
+                // Update search index
+                await searchEngine.updateIndex(for: savedNote, in: vault)
+            } catch {
+                ErrorHandler.log(error, context: "createNewNote")
             }
         }
     }
@@ -288,12 +279,30 @@ class AppViewModel: ObservableObject {
         return tagManager.getAllTags(in: vault)
     }
     
-    // MARK: - Folder Operations (Placeholder implementations)
+    // MARK: - Folder Operations
     
     func createNewFolder(name: String) {
-        // TODO: Implement folder creation
-        let folder = Folder(name: name, path: name)
-        mockFolders.append(folder)
+        guard let vault = currentVault else { return }
+        
+        // Create folder in the file system
+        let folderURL = vault.rootURL.appendingPathComponent(name)
+        
+        do {
+            try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true)
+            
+            // Add to mock folders
+            let folder = Folder(name: name, path: name)
+            mockFolders.append(folder)
+            
+            // Refresh vault
+            Task {
+                try? await vaultManager.refreshCurrentVault()
+            }
+        } catch {
+            ErrorHandler.log(error, context: "createNewFolder")
+            currentError = error
+            showError = true
+        }
     }
     
     func getSubfolders(of parentId: UUID?) -> [Folder] {
