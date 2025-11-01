@@ -1,0 +1,37 @@
+{
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Services/SearchEngine.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngine.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngine.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngine.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngine.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngine.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Services/SearchEngineProtocol.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngineProtocol.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngineProtocol.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngineProtocol.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngineProtocol.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchEngineProtocol.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Utils/MarkdownParser.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/MarkdownParser.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/MarkdownParser.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/MarkdownParser.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/MarkdownParser.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/MarkdownParser.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Utils/SyntaxHighlighter.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SyntaxHighlighter.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SyntaxHighlighter.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SyntaxHighlighter.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SyntaxHighlighter.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SyntaxHighlighter.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/ViewModels/AppViewModel.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AppViewModel.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AppViewModel.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AppViewModel.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AppViewModel.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AppViewModel.swiftdeps"
+  }
+}

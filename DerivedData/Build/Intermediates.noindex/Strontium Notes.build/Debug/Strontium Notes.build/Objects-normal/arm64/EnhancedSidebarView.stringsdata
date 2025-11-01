@@ -1,0 +1,104 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/EnhancedSidebarView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "New Folder",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "Folder name",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 49
+        }
+      },
+      {
+        "comment": "",
+        "key": "Notes",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search notes...",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld notes",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sort",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Note",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 229
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Folder",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 236
+        }
+      },
+      {
+        "comment": "",
+        "key": "Rename",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 245
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 252
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,104 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/EnhancedBacklinksView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Connections",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select a note to see connections",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 60
+        }
+      },
+      {
+        "comment": "",
+        "key": "Backlinks and outgoing links will appear here",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "Outgoing Links",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 87
+        }
+      },
+      {
+        "comment": "",
+        "key": "Backlinks",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 114
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "No backlinks yet",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "Other notes that link to this note will appear here",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "Note doesn't exist - click to create",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 193
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld words",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 293
+        }
+      },
+      {
+        "comment": "",
+        "key": "•",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 297
+        }
+      }
+    ]
+  },
+  "version": 1
+}

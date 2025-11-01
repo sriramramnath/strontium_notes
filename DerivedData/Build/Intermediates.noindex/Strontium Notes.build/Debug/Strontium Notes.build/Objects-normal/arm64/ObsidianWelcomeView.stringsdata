@@ -1,0 +1,96 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ObsidianWelcomeView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Strontium Notes",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 34
+        }
+      },
+      {
+        "comment": "",
+        "key": "Knowledge Management",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "Welcome to your digital workspace",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create, organize, and connect your thoughts with powerful markdown editing",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 51
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create new note",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search notes",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open vault",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create new vault",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 86
+        }
+      },
+      {
+        "comment": "",
+        "key": "Strontium Notes",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 97
+        }
+      },
+      {
+        "comment": "",
+        "key": "A minimalist knowledge management app",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 101
+        }
+      }
+    ]
+  },
+  "version": 1
+}

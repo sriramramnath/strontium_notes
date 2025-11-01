@@ -1,0 +1,40 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ObsidianRightSidebarView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Outline",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 99
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "No headings",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 122
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add # headings to see outline",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 126
+        }
+      }
+    ]
+  },
+  "version": 1
+}

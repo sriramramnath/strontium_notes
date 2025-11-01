@@ -1,0 +1,128 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ObsidianSidebarView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Strontium Notes",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open vault...",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 26
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create new vault...",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "About",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "No vault open",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open vault",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create new vault",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 156
+        }
+      },
+      {
+        "comment": "",
+        "key": "Note title",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 210
+        }
+      },
+      {
+        "comment": "",
+        "key": "Rename",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 241
+        }
+      },
+      {
+        "comment": "",
+        "key": "Duplicate",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 244
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 248
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search...",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 304
+        }
+      },
+      {
+        "comment": "",
+        "key": "Daily Notes",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 409
+        }
+      },
+      {
+        "comment": "",
+        "key": "Coming soon",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 413
+        }
+      }
+    ]
+  },
+  "version": 1
+}

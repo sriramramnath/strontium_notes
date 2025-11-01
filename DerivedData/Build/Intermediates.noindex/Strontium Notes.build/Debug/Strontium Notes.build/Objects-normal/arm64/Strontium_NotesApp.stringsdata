@@ -1,0 +1,88 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Strontium_NotesApp.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "View",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Note",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 22
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "Command Palette",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 32
+        }
+      },
+      {
+        "comment": "",
+        "key": "Toggle Sidebar",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Split Horizontally",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "Split Vertically",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 51
+        }
+      },
+      {
+        "comment": "",
+        "key": "Light Mode",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "Dark Mode",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "System Theme",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 66
+        }
+      }
+    ]
+  },
+  "version": 1
+}

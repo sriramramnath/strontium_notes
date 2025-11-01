@@ -20,19 +20,28 @@
               "icon": "lucide-file",
               "title": "DEVELOPER_GUIDE"
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "a555c3cc809b6127",
+        "type": "tabs",
+        "children": [
           {
-            "id": "5370f141a4d85bd0",
+            "id": "eb46f17a5bd7a33f",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Markdown/DEVELOPER_GUIDE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DEVELOPER_GUIDE"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,8 +115,8 @@
               "type": "backlink",
               "state": {
                 "file": "Markdown/DEVELOPER_GUIDE.md",
-                "collapseAll": false,
-                "extraContext": false,
+                "collapseAll": true,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -162,7 +171,8 @@
               "title": "Outline of DEVELOPER_GUIDE"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -180,7 +190,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "5370f141a4d85bd0",
+  "active": "eb46f17a5bd7a33f",
   "lastOpenFiles": [
     "Untitled Note 17.md",
     "Untitled Note 16.md",

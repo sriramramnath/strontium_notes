@@ -56,19 +56,7 @@ struct ContentView: View {
                 EmptyView() // Handled in VSCodeStyleView
             }
         }
-        .overlay(
-            Group {
-                if appViewModel.showCommandPalette {
-                    Color.black.opacity(0.3)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            appViewModel.showCommandPalette = false
-                        }
-                    
-                    CommandPaletteView(appViewModel: appViewModel, isPresented: $appViewModel.showCommandPalette)
-                }
-            }
-        )
+
         .errorAlert(error: $appViewModel.currentError, isPresented: $appViewModel.showError)
     }
 }

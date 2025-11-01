@@ -1,0 +1,56 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/VaultPickerView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Open Vault",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select a folder to use as your vault",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "Recent Vaults",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "Browse for Folder...",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 92
+        }
+      },
+      {
+        "comment": "",
+        "key": "Open Vault",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 97
+        }
+      }
+    ]
+  },
+  "version": 1
+}

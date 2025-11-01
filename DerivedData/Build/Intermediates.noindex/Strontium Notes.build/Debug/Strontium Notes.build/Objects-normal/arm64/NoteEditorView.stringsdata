@@ -1,0 +1,160 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/NoteEditorView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Modified %@",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld tags",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "Preview",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "Note Info",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 59
+        }
+      },
+      {
+        "comment": "",
+        "key": "More Options",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 72
+        }
+      },
+      {
+        "comment": "",
+        "key": "Export as PDF",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "Export as HTML",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Duplicate Note",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Move to Folder...",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete Note",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "Saved",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld words",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 102
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld characters",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "#%@",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 113
+        }
+      },
+      {
+        "comment": "",
+        "key": "Revert",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 131
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create New Note",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 173
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Note Selected",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 161
+        }
+      },
+      {
+        "comment": "",
+        "key": "Select a note from the sidebar or create a new one to start editing",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 166
+        }
+      }
+    ]
+  },
+  "version": 1
+}

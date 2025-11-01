@@ -1,0 +1,30 @@
+{
+  "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/ContentView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ContentView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ContentView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Strontium_NotesApp.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/Strontium_NotesApp.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/Strontium_NotesApp.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/Strontium_NotesApp.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/Strontium_NotesApp.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/Strontium_NotesApp.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/WYSIWYMEditor.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/WYSIWYMEditor.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/WYSIWYMEditor.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/WYSIWYMEditor.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/WYSIWYMEditor.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/WYSIWYMEditor.swiftdeps"
+  }
+}

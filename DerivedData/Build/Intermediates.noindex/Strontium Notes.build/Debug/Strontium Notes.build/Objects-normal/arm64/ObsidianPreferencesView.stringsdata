@@ -1,0 +1,192 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ObsidianPreferencesView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 19
+        }
+      },
+      {
+        "comment": "",
+        "key": "General",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "Auto-save notes",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Auto-save interval:",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "%llds",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "Watch for file changes",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 175
+        }
+      },
+      {
+        "comment": "",
+        "key": "Editor",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 195
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enable LaTeX rendering",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 201
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show line numbers",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "Font size:",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 215
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lldpt",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 222
+        }
+      },
+      {
+        "comment": "",
+        "key": "Appearance",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 242
+        }
+      },
+      {
+        "comment": "",
+        "key": "Note: Strontium Notes uses a minimalist black and white design with red accents.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 261
+        }
+      },
+      {
+        "comment": "",
+        "key": "Theme:",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 248
+        }
+      },
+      {
+        "comment": "",
+        "key": "Theme",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 252
+        }
+      },
+      {
+        "comment": "",
+        "key": "About",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 276
+        }
+      },
+      {
+        "comment": "",
+        "key": "A minimalist knowledge management app built with SwiftUI.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 309
+        }
+      },
+      {
+        "comment": "",
+        "key": "Strontium Notes",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 282
+        }
+      },
+      {
+        "comment": "",
+        "key": "Version 1.0.0",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 286
+        }
+      },
+      {
+        "comment": "",
+        "key": "Developer",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 292
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sriram Ramnath",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 296
+        }
+      },
+      {
+        "comment": "",
+        "key": "sriramramnath2011@gmail.com",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 300
+        }
+      },
+      {
+        "comment": "",
+        "key": "@sriramramnath",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 304
+        }
+      }
+    ]
+  },
+  "version": 1
+}

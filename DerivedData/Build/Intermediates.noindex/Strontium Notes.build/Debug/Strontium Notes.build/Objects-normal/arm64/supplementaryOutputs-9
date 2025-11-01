@@ -1,0 +1,30 @@
+{
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/StatisticsView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/StatisticsView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/StatisticsView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/StatisticsView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/StatisticsView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/StatisticsView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/TagsView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/TagsView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/TagsView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/TagsView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/TagsView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/TagsView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/VSCodeStyleView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VSCodeStyleView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VSCodeStyleView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VSCodeStyleView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VSCodeStyleView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VSCodeStyleView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/VaultPickerView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VaultPickerView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VaultPickerView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VaultPickerView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VaultPickerView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/VaultPickerView.swiftdeps"
+  }
+}

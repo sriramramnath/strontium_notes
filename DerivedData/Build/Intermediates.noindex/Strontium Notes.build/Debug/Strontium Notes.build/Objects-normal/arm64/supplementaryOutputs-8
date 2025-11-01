@@ -1,0 +1,30 @@
+{
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/PreferencesView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/PreferencesView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/PreferencesView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/PreferencesView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/PreferencesView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/PreferencesView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/SearchView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SearchView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/SidebarView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SidebarView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SidebarView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SidebarView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SidebarView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SidebarView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/SimpleTextEditor.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SimpleTextEditor.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SimpleTextEditor.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SimpleTextEditor.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SimpleTextEditor.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/SimpleTextEditor.swiftdeps"
+  }
+}

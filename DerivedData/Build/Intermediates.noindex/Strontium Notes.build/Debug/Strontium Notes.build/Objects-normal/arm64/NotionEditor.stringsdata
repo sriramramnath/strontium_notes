@@ -1,0 +1,40 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/NotionEditor.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Click here to start writing...",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 79
+        }
+      },
+      {
+        "comment": "",
+        "key": "Type '/' for commands",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "Type '/' for commands",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 200
+        }
+      },
+      {
+        "comment": "",
+        "key": "•",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 274
+        }
+      }
+    ]
+  },
+  "version": 1
+}

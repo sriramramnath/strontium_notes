@@ -1,0 +1,88 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ObsidianCreateVaultView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Create new vault",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 22
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create a new vault",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 50
+        }
+      },
+      {
+        "comment": "",
+        "key": "A vault is a folder where your notes will be stored.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 54
+        }
+      },
+      {
+        "comment": "",
+        "key": "Vault name",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "My Vault",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "Location",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 85
+        }
+      },
+      {
+        "comment": "",
+        "key": "No location selected",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "Browse",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 109
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 156
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -152,14 +152,14 @@ struct VSCodeStyleView: View {
     }
 }
 
-// Activity Bar (left icon bar like VS Code)
+// Activity Bar (left icon bar like Obsidian)
 struct ActivityBar: View {
     @ObservedObject var appViewModel: AppViewModel
     
     var body: some View {
         VStack(spacing: 0) {
-            // Top icons
-            VStack(spacing: 8) {
+            // Top icons - matching Obsidian exactly
+            VStack(spacing: 0) {
                 ActivityBarIcon(icon: "doc.text.fill", isSelected: appViewModel.selectedSidebarItem == .files) {
                     appViewModel.selectedSidebarItem = .files
                 }
@@ -168,12 +168,32 @@ struct ActivityBar: View {
                     appViewModel.selectedSidebarItem = .search
                 }
                 
-                ActivityBarIcon(icon: "number", isSelected: appViewModel.selectedSidebarItem == .tags) {
-                    appViewModel.selectedSidebarItem = .tags
+                ActivityBarIcon(icon: "bookmark.fill", isSelected: false) {
+                    // Bookmarks
                 }
                 
-                ActivityBarIcon(icon: "link", isSelected: appViewModel.selectedSidebarItem == .backlinks) {
-                    appViewModel.selectedSidebarItem = .backlinks
+                ActivityBarIcon(icon: "doc.on.doc.fill", isSelected: false) {
+                    // Recent files
+                }
+                
+                ActivityBarIcon(icon: "star.fill", isSelected: false) {
+                    // Graph view
+                }
+                
+                ActivityBarIcon(icon: "calendar", isSelected: appViewModel.selectedSidebarItem == .daily) {
+                    appViewModel.selectedSidebarItem = .daily
+                }
+                
+                ActivityBarIcon(icon: "square.grid.2x2.fill", isSelected: false) {
+                    // Canvas view
+                }
+                
+                ActivityBarIcon(icon: "slider.horizontal.3", isSelected: false) {
+                    // Settings/plugins
+                }
+                
+                ActivityBarIcon(icon: "wrench.and.screwdriver.fill", isSelected: false) {
+                    // Tools
                 }
             }
             .padding(.top, 8)
@@ -181,8 +201,8 @@ struct ActivityBar: View {
             Spacer()
             
             // Bottom icons
-            VStack(spacing: 8) {
-ActivityBarIcon(icon: "folder", isSelected: false) {
+            VStack(spacing: 0) {
+                ActivityBarIcon(icon: "folder", isSelected: false) {
                     // Open folder action
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = false
@@ -207,7 +227,7 @@ ActivityBarIcon(icon: "folder", isSelected: false) {
             .padding(.bottom, 8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(red: 0.082, green: 0.082, blue: 0.082)) // #151515 - VS Code activity bar
+        .background(Color(red: 0.176, green: 0.176, blue: 0.176)) // #2d2d2d - Obsidian activity bar
     }
 }
 
@@ -220,17 +240,11 @@ struct ActivityBarIcon: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: icon)
-                .font(.system(size: 22))
-                .foregroundColor(isSelected ? .white : (isHovered ? Color.primaryText : Color.tertiaryText))
-                .frame(width: 48, height: 48)
-                .background(isSelected ? Color.clear : Color.clear)
-                .overlay(
-                    Rectangle()
-                        .fill(.white)
-                        .frame(width: 2)
-                        .opacity(isSelected ? 1 : 0),
-                    alignment: .leading
-                )
+                .font(.system(size: 18, weight: .regular))
+                .foregroundColor(isSelected ? Color.primaryText : (isHovered ? Color.secondaryText : Color.tertiaryText))
+                .frame(width: 48, height: 44)
+                .background(isSelected ? Color.primaryBorder.opacity(0.3) : Color.clear)
+                .cornerRadius(0) // Square, no rounding
         }
         .buttonStyle(.plain)
         .onHover { hovering in
@@ -245,37 +259,68 @@ struct VSCodeSidebar: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header
-            HStack {
+            // Header with toolbar buttons - compact Obsidian style
+            HStack(spacing: 0) {
                 Text(sidebarTitle)
                     .font(.system(size: 11, weight: .semibold))
-                    .foregroundColor(Color.primaryText)
+                    .foregroundColor(Color.tertiaryText)
                     .textCase(.uppercase)
+                    .padding(.leading, 16)
                 
                 Spacer()
                 
-                if appViewModel.selectedSidebarItem == .files {
-                    Menu {
-                        Button(action: { appViewModel.createNewNote() }) {
-                            Label("New Note", systemImage: "doc.badge.plus")
+                // Toolbar buttons - tight spacing like Obsidian
+                HStack(spacing: 2) {
+                    if appViewModel.selectedSidebarItem == .files {
+                        Button(action: {}) {
+                            Image(systemName: "line.3.horizontal.decrease")
+                                .font(.system(size: 13))
+                                .foregroundColor(Color.tertiaryText)
+                                .frame(width: 28, height: 32)
                         }
+                        .buttonStyle(.plain)
                         
-                        Button(action: { 
-                            appViewModel.presentedSheet = .createFolder
+                        Button(action: {
+                            appViewModel.selectedSidebarItem = .search
                         }) {
-                            Label("New Folder", systemImage: "folder.badge.plus")
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 13))
+                                .foregroundColor(Color.tertiaryText)
+                                .frame(width: 28, height: 32)
                         }
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundColor(Color.primaryText)
+                        .buttonStyle(.plain)
+                        
+                        Menu {
+                            Button(action: { appViewModel.createNewNote() }) {
+                                Label("New Note", systemImage: "doc.badge.plus")
+                            }
+                            
+                            Button(action: { 
+                                appViewModel.presentedSheet = .createFolder
+                            }) {
+                                Label("New Folder", systemImage: "folder.badge.plus")
+                            }
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 13, weight: .medium))
+                                .foregroundColor(Color.tertiaryText)
+                                .frame(width: 28, height: 32)
+                        }
+                        .menuStyle(.borderlessButton)
+                        .menuIndicator(.hidden)
+                        
+                        Button(action: {}) {
+                            Image(systemName: "ellipsis")
+                                .font(.system(size: 13))
+                                .foregroundColor(Color.tertiaryText)
+                                .frame(width: 28, height: 32)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .menuStyle(.borderlessButton)
-                    .menuIndicator(.hidden)
                 }
+                .padding(.trailing, 8)
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 12)
+            .frame(height: 40)
             .background(Color.secondaryBackground)
             
             // Content
@@ -410,23 +455,25 @@ struct VSCodeFolderItem: View {
         Button(action: onToggle) {
             HStack(spacing: 4) {
                 Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
-                    .font(.system(size: 10, weight: .medium))
+                    .font(.system(size: 9, weight: .semibold))
                     .foregroundColor(Color.tertiaryText)
                     .frame(width: 12)
                 
                 Image(systemName: isExpanded ? "folder.fill" : "folder")
-                    .font(.system(size: 14))
-                    .foregroundColor(Color.accent)
+                    .font(.system(size: 13))
+                    .foregroundColor(Color.tertiaryText)
                 
                 Text(folder.name)
                     .font(.system(size: 13))
                     .foregroundColor(Color.primaryText)
+                    .lineLimit(1)
                 
                 Spacer()
             }
-            .padding(.leading, CGFloat(level * 12 + 8))
+            .padding(.leading, CGFloat(level * 16 + 12))
+            .padding(.trailing, 8)
             .padding(.vertical, 4)
-            .background(isHovered ? Color.primaryBackground : Color.clear)
+            .background(isHovered ? Color.tertiaryBackground.opacity(0.5) : Color.clear)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -442,30 +489,37 @@ struct VSCodeTreeItem: View {
     let isExpanded: Bool
     let level: Int
     let onToggle: () -> Void
+    @State private var isHovered = false
     
     var body: some View {
         Button(action: onToggle) {
             HStack(spacing: 4) {
                 Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
-                    .font(.system(size: 10, weight: .medium))
+                    .font(.system(size: 9, weight: .semibold))
                     .foregroundColor(Color.tertiaryText)
                     .frame(width: 12)
                 
                 Image(systemName: icon)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color.accent)
+                    .font(.system(size: 13))
+                    .foregroundColor(Color.tertiaryText)
                 
                 Text(title)
-                    .font(.system(size: 13))
+                    .font(.system(size: 13, weight: .medium))
                     .foregroundColor(Color.primaryText)
+                    .lineLimit(1)
                 
                 Spacer()
             }
-            .padding(.leading, CGFloat(level * 12 + 8))
+            .padding(.leading, CGFloat(level * 16 + 12))
+            .padding(.trailing, 8)
             .padding(.vertical, 4)
+            .background(isHovered ? Color.tertiaryBackground.opacity(0.5) : Color.clear)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .onHover { hovering in
+            isHovered = hovering
+        }
     }
 }
 
@@ -481,18 +535,20 @@ struct VSCodeFileItem: View {
         Button(action: onSelect) {
             HStack(spacing: 6) {
                 Image(systemName: "doc.text")
-                    .font(.system(size: 13))
-                    .foregroundColor(isSelected ? .white : Color.secondaryText)
+                    .font(.system(size: 12))
+                    .foregroundColor(isSelected ? Color.primaryText : Color.tertiaryText)
                 
                 Text(note.title)
                     .font(.system(size: 13))
-                    .foregroundColor(isSelected ? .white : Color.primaryText)
+                    .foregroundColor(Color.primaryText)
+                    .lineLimit(1)
                 
                 Spacer()
             }
-            .padding(.leading, CGFloat(level * 16 + 8))
-            .padding(.vertical, 3)
-            .background(isSelected ? Color.accent : (isHovered ? Color.tertiaryBackground : Color.clear))
+            .padding(.leading, CGFloat(level * 16 + 12))
+            .padding(.trailing, 8)
+            .padding(.vertical, 4)
+            .background(isSelected ? Color.tertiaryBackground : (isHovered ? Color.tertiaryBackground.opacity(0.5) : Color.clear))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -772,94 +828,160 @@ struct VSCodeEditor: View {
     var body: some View {
         VStack(spacing: 0) {
             if let note = appViewModel.selectedNote {
-                // Tab bar - Obsidian style (minimal)
-                HStack(spacing: 0) {
-                    // File icon and title
-                    HStack(spacing: 8) {
-                        Image(systemName: "doc.text")
-                            .font(.system(size: 14))
-                            .foregroundColor(Color.secondaryText)
-                        
-                        Text(note.title)
-                            .font(.system(size: 13))
-                            .foregroundColor(Color.primaryText)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
-                    
-                    Spacer()
-                    
-                    // Right side actions
-                    HStack(spacing: 4) {
-                        Menu {
-                            Button(action: {
-                                // Rename file
-                                appViewModel.presentedSheet = .renameNote
-                            }) {
-                                Label("Rename", systemImage: "pencil")
+                // Combined Tab Bar and Toolbar - Obsidian style
+                VStack(spacing: 0) {
+                    // Tab bar with integrated breadcrumb
+                    HStack(spacing: 0) {
+                        // Back/Forward buttons
+                        HStack(spacing: 0) {
+                            Button(action: {}) {
+                                Image(systemName: "chevron.left")
+                                    .font(.system(size: 11, weight: .medium))
+                                    .foregroundColor(Color.tertiaryText)
+                                    .frame(width: 24, height: 36)
                             }
+                            .buttonStyle(.plain)
                             
-                            Button(action: {
-                                // Delete file
-                                if let note = appViewModel.selectedNote {
-                                    Task {
-                                        await appViewModel.deleteNote(note)
-                                    }
-                                }
-                            }) {
-                                Label("Delete", systemImage: "trash")
+                            Button(action: {}) {
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 11, weight: .medium))
+                                    .foregroundColor(Color.tertiaryText)
+                                    .frame(width: 24, height: 36)
                             }
-                            
-                            Divider()
-                            
-                            Button(action: {
-                                // Copy path
-                                if let note = appViewModel.selectedNote {
-                                    NSPasteboard.general.clearContents()
-                                    NSPasteboard.general.setString(note.filePath, forType: .string)
-                                }
-                            }) {
-                                Label("Copy Path", systemImage: "doc.on.doc")
-                            }
-                            
-                            Button(action: {
-                                // Reveal in Finder
-                                if let vault = appViewModel.currentVault, let note = appViewModel.selectedNote {
-                                    let fileURL = vault.rootURL.appendingPathComponent(note.filePath)
-                                    NSWorkspace.shared.activateFileViewerSelecting([fileURL])
-                                }
-                            }) {
-                                Label("Reveal in Finder", systemImage: "folder")
-                            }
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .font(.system(size: 14))
-                                .foregroundColor(Color.secondaryText)
-                                .frame(width: 30, height: 30)
+                            .buttonStyle(.plain)
                         }
-                        .menuStyle(.borderlessButton)
-                        .menuIndicator(.hidden)
+                        .background(Color.secondaryBackground)
                         
+                        // Active tab with breadcrumb
+                        VStack(spacing: 0) {
+                            // Breadcrumb inside tab
+                            HStack(spacing: 4) {
+                                Text("Markdown")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(Color.tertiaryText)
+                                
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 9))
+                                    .foregroundColor(Color.tertiaryText)
+                                
+                                Text(note.title)
+                                    .font(.system(size: 11))
+                                    .foregroundColor(Color.secondaryText)
+                            }
+                            .padding(.horizontal, 12)
+                            .padding(.top, 6)
+                            .padding(.bottom, 2)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .frame(height: 36)
+                        .background(Color.secondaryBackground)
+                        
+                        // Close button
                         Button(action: {
                             appViewModel.selectedNote = nil
                         }) {
                             Image(systemName: "xmark")
-                                .font(.system(size: 12))
-                                .foregroundColor(Color.secondaryText)
+                                .font(.system(size: 10))
+                                .foregroundColor(Color.tertiaryText)
+                                .frame(width: 28, height: 36)
                         }
                         .buttonStyle(.plain)
+                        .background(Color.secondaryBackground)
+                        
+                        // New tab button
+                        Button(action: {
+                            appViewModel.createNewNote()
+                        }) {
+                            Image(systemName: "plus")
+                                .font(.system(size: 11))
+                                .foregroundColor(Color.tertiaryText)
+                                .frame(width: 28, height: 36)
+                        }
+                        .buttonStyle(.plain)
+                        .background(Color.secondaryBackground)
+                        
+                        Spacer()
+                        
+                        // Right side toolbar buttons
+                        HStack(spacing: 0) {
+                            Button(action: {}) {
+                                Image(systemName: "square.split.2x1")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.tertiaryText)
+                                    .frame(width: 32, height: 36)
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Button(action: {}) {
+                                Image(systemName: "square.on.square")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.tertiaryText)
+                                    .frame(width: 32, height: 36)
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Menu {
+                                Button(action: {
+                                    appViewModel.presentedSheet = .renameNote
+                                }) {
+                                    Label("Rename", systemImage: "pencil")
+                                }
+                                
+                                Button(action: {
+                                    if let note = appViewModel.selectedNote {
+                                        Task {
+                                            await appViewModel.deleteNote(note)
+                                        }
+                                    }
+                                }) {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                                
+                                Divider()
+                                
+                                Button(action: {
+                                    if let note = appViewModel.selectedNote {
+                                        NSPasteboard.general.clearContents()
+                                        NSPasteboard.general.setString(note.filePath, forType: .string)
+                                    }
+                                }) {
+                                    Label("Copy Path", systemImage: "doc.on.doc")
+                                }
+                                
+                                Button(action: {
+                                    if let vault = appViewModel.currentVault, let note = appViewModel.selectedNote {
+                                        let fileURL = vault.rootURL.appendingPathComponent(note.filePath)
+                                        NSWorkspace.shared.activateFileViewerSelecting([fileURL])
+                                    }
+                                }) {
+                                    Label("Reveal in Finder", systemImage: "folder")
+                                }
+                            } label: {
+                                Image(systemName: "ellipsis")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.tertiaryText)
+                                    .frame(width: 32, height: 36)
+                            }
+                            .menuStyle(.borderlessButton)
+                            .menuIndicator(.hidden)
+                            
+                            Button(action: {}) {
+                                Image(systemName: "chevron.down")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(Color.tertiaryText)
+                                    .frame(width: 32, height: 36)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        .background(Color.secondaryBackground)
                     }
-                    .padding(.horizontal, 12)
-                }
-                .background(Color.primaryBackground)
-                .overlay(
+                    .background(Color.secondaryBackground)
+                    
+                    // Bottom border
                     Rectangle()
                         .fill(Color.primaryBorder)
-                        .frame(height: 1),
-                    alignment: .bottom
-                )
-                
-
+                        .frame(height: 1)
+                }
                 
                 // Live Preview Editor - edit and see formatted result
                 VSCodeLiveEditor(

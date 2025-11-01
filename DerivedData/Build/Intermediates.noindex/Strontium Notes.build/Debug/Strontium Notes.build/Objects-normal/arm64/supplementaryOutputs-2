@@ -1,0 +1,37 @@
+{
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/AnimatedButtonStyles.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AnimatedButtonStyles.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AnimatedButtonStyles.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AnimatedButtonStyles.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AnimatedButtonStyles.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/AnimatedButtonStyles.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/BacklinksView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/BacklinksView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/BacklinksView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/BacklinksView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/BacklinksView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/BacklinksView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ColorScheme.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ColorScheme.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ColorScheme.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ColorScheme.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ColorScheme.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/ColorScheme.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/CommandPaletteView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CommandPaletteView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CommandPaletteView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CommandPaletteView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CommandPaletteView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CommandPaletteView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/CreateVaultView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CreateVaultView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CreateVaultView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CreateVaultView.dia",
+    "object" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CreateVaultView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Strontium Notes/DerivedData/Build/Intermediates.noindex/Strontium Notes.build/Debug/Strontium Notes.build/Objects-normal/arm64/CreateVaultView.swiftdeps"
+  }
+}

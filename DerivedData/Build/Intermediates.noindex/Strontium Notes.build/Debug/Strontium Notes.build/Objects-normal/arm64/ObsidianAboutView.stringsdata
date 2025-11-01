@@ -1,0 +1,80 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/ObsidianAboutView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "About",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "A minimalist knowledge management app\nbuilt with SwiftUI",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
+        "key": "© 2025 Strontium Notes. All rights reserved.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "Strontium Notes",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 61
+        }
+      },
+      {
+        "comment": "",
+        "key": "Version 1.0.0",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Knowledge Management",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "Developer",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sriram Ramnath",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 92
+        }
+      },
+      {
+        "comment": "",
+        "key": "@sriramramnath",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 96
+        }
+      }
+    ]
+  },
+  "version": 1
+}

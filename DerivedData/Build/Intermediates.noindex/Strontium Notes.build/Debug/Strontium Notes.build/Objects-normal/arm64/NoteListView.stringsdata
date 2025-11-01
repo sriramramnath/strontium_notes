@@ -1,0 +1,72 @@
+{
+  "source": "/Users/sriram/Desktop/Strontium Notes/Strontium Notes/Views/NoteListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Notes",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create New Note",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Notes Yet",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 41
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create your first note to get started",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 45
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create Note",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 48
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld words",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 129
+        }
+      },
+      {
+        "comment": "",
+        "key": "+%lld",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "#%@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 107
+        }
+      }
+    ]
+  },
+  "version": 1
+}
