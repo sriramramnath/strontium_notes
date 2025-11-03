@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'Strontium Notes' in project 'Strontium Notes' (no dependencies)

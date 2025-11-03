@@ -105,7 +105,6 @@ class LinkResolver: LinkResolverProtocol, ObservableObject {
                         // Replace in reverse order to maintain ranges
                         for match in matches.reversed() {
                             let range = match.range
-                            let oldText = nsString.substring(with: range)
                             
                             let newText: String
                             if match.numberOfRanges > 1 {

@@ -1,0 +1,80 @@
+{
+  "source": "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/SearchView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Search",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search notes...",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search Tips:",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 62
+        }
+      },
+      {
+        "comment": "",
+        "key": "• Use quotes for exact phrases",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "• tag:name to search by tag",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 69
+        }
+      },
+      {
+        "comment": "",
+        "key": "• -word to exclude terms",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "No results found",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "Try different keywords or check your spelling",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 97
+        }
+      },
+      {
+        "comment": "",
+        "key": "#%@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 159
+        }
+      }
+    ]
+  },
+  "version": 1
+}

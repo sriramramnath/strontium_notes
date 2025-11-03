@@ -1,0 +1,44 @@
+{
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/EnhancedTagsView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/EnhancedTagsView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/EnhancedTagsView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/EnhancedTagsView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/EnhancedTagsView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/EnhancedTagsView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/FilesView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FilesView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FilesView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FilesView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FilesView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FilesView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/FolderRowView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FolderRowView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FolderRowView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FolderRowView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FolderRowView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FolderRowView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/KeyboardShortcutsView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/KeyboardShortcutsView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/KeyboardShortcutsView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/KeyboardShortcutsView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/KeyboardShortcutsView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/KeyboardShortcutsView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/NoteEditorView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteEditorView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteEditorView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteEditorView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteEditorView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteEditorView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/NoteListView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteListView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteListView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteListView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteListView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteListView.swiftdeps"
+  }
+}

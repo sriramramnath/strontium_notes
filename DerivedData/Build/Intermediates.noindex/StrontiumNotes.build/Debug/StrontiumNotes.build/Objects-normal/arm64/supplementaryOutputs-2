@@ -1,0 +1,44 @@
+{
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Services/FileSystemWatcher.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FileSystemWatcher.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FileSystemWatcher.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FileSystemWatcher.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FileSystemWatcher.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/FileSystemWatcher.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Services/LinkResolver.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolver.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolver.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolver.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolver.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolver.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Services/LinkResolverProtocol.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolverProtocol.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolverProtocol.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolverProtocol.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolverProtocol.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/LinkResolverProtocol.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Services/NoteManager.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManager.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManager.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManager.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManager.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManager.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Services/NoteManagerProtocol.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManagerProtocol.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManagerProtocol.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManagerProtocol.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManagerProtocol.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteManagerProtocol.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Services/SearchEngine.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/SearchEngine.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/SearchEngine.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/SearchEngine.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/SearchEngine.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/SearchEngine.swiftdeps"
+  }
+}

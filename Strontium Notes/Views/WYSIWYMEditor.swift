@@ -153,11 +153,11 @@ class MarkdownTextView: NSTextView {
     }
     
     private func setupTextView() {
-        textContainerInset = NSSize(width: 24, height: 20)
+        textContainerInset = NSSize(width: 20, height: 16)
         backgroundColor = NSColor.black
         textColor = NSColor.white
         insertionPointColor = NSColor.white
-        font = NSFont.systemFont(ofSize: 14)
+        font = NSFont.systemFont(ofSize: 13)
         
         // Enable better text rendering
         layoutManager?.allowsNonContiguousLayout = false
@@ -172,11 +172,11 @@ class MarkdownTextView: NSTextView {
         // Force white text color
         textColor = NSColor.white
         
-        // Better line spacing
+        // Better line spacing (more compact like Obsidian)
         defaultParagraphStyle = createParagraphStyle()
         typingAttributes = [
             NSAttributedString.Key.foregroundColor: NSColor.white,
-            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 13),
             NSAttributedString.Key.paragraphStyle: createParagraphStyle()
         ]
         
@@ -194,7 +194,7 @@ class MarkdownTextView: NSTextView {
         isRendering = true
         
         let currentText = string
-        let currentRange = selectedRange()
+        _ = selectedRange()
         lastRenderedText = currentText
         
         // Always ensure white text on black background
@@ -218,9 +218,9 @@ class MarkdownTextView: NSTextView {
     
     private func createParagraphStyle() -> NSParagraphStyle {
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 4
-        paragraphStyle.paragraphSpacing = 12
-        paragraphStyle.lineHeightMultiple = 1.2
+        paragraphStyle.lineSpacing = 2
+        paragraphStyle.paragraphSpacing = 8
+        paragraphStyle.lineHeightMultiple = 1.15
         return paragraphStyle
     }
     
@@ -250,51 +250,51 @@ class MarkdownTextView: NSTextView {
     }
     
     private func applyHeaderStyling(to attributedString: NSMutableAttributedString, text: String) {
-        // H1 - # Header
+        // H1 - # Header (smaller like Obsidian)
         let h1Pattern = "^(#{1})\\s+(.+)$"
         applyPattern(h1Pattern, to: attributedString, text: text) { match, range in
             let headerRange = NSRange(location: range.location + 2, length: range.length - 2)
             attributedString.addAttributes([
-                NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 24),
+                NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 18),
                 NSAttributedString.Key.foregroundColor: NSColor.white
             ], range: headerRange)
             
             // Style the # symbol
             attributedString.addAttributes([
                 NSAttributedString.Key.foregroundColor: NSColor.gray,
-                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14)
+                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12)
             ], range: NSRange(location: range.location, length: 2))
         }
         
-        // H2 - ## Header
+        // H2 - ## Header (smaller like Obsidian)
         let h2Pattern = "^(#{2})\\s+(.+)$"
         applyPattern(h2Pattern, to: attributedString, text: text) { match, range in
             let headerRange = NSRange(location: range.location + 3, length: range.length - 3)
             attributedString.addAttributes([
-                NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 20),
+                NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 16),
                 NSAttributedString.Key.foregroundColor: NSColor.white
             ], range: headerRange)
             
             // Style the ## symbols
             attributedString.addAttributes([
                 NSAttributedString.Key.foregroundColor: NSColor.gray,
-                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14)
+                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12)
             ], range: NSRange(location: range.location, length: 3))
         }
         
-        // H3 - ### Header
+        // H3 - ### Header (smaller like Obsidian)
         let h3Pattern = "^(#{3})\\s+(.+)$"
         applyPattern(h3Pattern, to: attributedString, text: text) { match, range in
             let headerRange = NSRange(location: range.location + 4, length: range.length - 4)
             attributedString.addAttributes([
-                NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 16),
+                NSAttributedString.Key.font: NSFont.boldSystemFont(ofSize: 14),
                 NSAttributedString.Key.foregroundColor: NSColor.white
             ], range: headerRange)
             
             // Style the ### symbols
             attributedString.addAttributes([
                 NSAttributedString.Key.foregroundColor: NSColor.gray,
-                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 14)
+                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12)
             ], range: NSRange(location: range.location, length: 4))
         }
     }

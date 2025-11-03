@@ -59,7 +59,7 @@ struct ObsidianSidebarView: View {
                 // Tab bar for different views
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 0) {
-                        ForEach([SidebarItem.files, SidebarItem.search, SidebarItem.tags, SidebarItem.backlinks, SidebarItem.daily, SidebarItem.stats], id: \.rawValue) { item in
+                        ForEach([SidebarItem.files, SidebarItem.search, SidebarItem.tags, SidebarItem.backlinks], id: \.rawValue) { item in
                         Button {
                             withAnimation(.easeInOut(duration: 0.2)) {
                                 appViewModel.selectedSidebarItem = item
@@ -125,7 +125,7 @@ struct ObsidianSidebarView: View {
                     case .backlinks:
                         BacklinksView(appViewModel: appViewModel)
                     case .daily:
-                        DailyNotesPlaceholderView()
+                        DailyNotesView(appViewModel: appViewModel)
                     case .stats:
                         StatisticsView(appViewModel: appViewModel)
                     }

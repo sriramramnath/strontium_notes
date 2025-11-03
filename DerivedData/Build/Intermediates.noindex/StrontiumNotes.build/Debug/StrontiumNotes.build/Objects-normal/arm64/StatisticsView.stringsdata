@@ -1,0 +1,120 @@
+{
+  "source": "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/StatisticsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Statistics",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 21
+        }
+      },
+      {
+        "comment": "",
+        "key": "Time Range",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "Activity Over Time",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
+        "key": "Metric",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "Most Used Tags",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 109
+        }
+      },
+      {
+        "comment": "",
+        "key": "Note Length Distribution",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "Most Active Days",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "Recent Activity",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 162
+        }
+      },
+      {
+        "comment": "",
+        "key": "#%@",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 361
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 367
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 403
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld notes",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 439
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld words",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 472
+        }
+      },
+      {
+        "comment": "",
+        "key": "Modified %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 465
+        }
+      }
+    ]
+  },
+  "version": 1
+}

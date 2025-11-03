@@ -60,22 +60,36 @@ struct VSCodeStyleView: View {
                     
                     // Editor Area
                     VSCodeEditor(appViewModel: appViewModel)
+                    
+                    // AI Panel (toggleable, on the right)
+                    if appViewModel.showAIPanel {
+                        AIAssistantPanel(appViewModel: appViewModel)
+                            .frame(width: 350)
+                            .transition(.move(edge: .trailing))
+                    }
                 }
                 .background(Color.primaryBackground)
+                .animation(.spring(response: 0.3), value: appViewModel.showAIPanel)
             }
         }
         .sheet(item: $appViewModel.presentedSheet) { sheet in
             switch sheet {
+            case .vaultPicker:
+                ObsidianVaultPickerView(appViewModel: appViewModel)
+            case .createVault:
+                ObsidianCreateVaultView(appViewModel: appViewModel)
             case .preferences:
-                SettingsView(appViewModel: appViewModel)
+                ObsidianPreferencesView(appViewModel: appViewModel)
+            case .about:
+                AboutView()
             case .renameNote:
                 if let note = appViewModel.selectedNote {
                     RenameNoteView(appViewModel: appViewModel, note: note)
                 }
             case .createFolder:
                 CreateFolderView(appViewModel: appViewModel)
-            default:
-                EmptyView()
+            case .upgrade:
+                UpgradeView()
             }
         }
         .overlay(
@@ -160,6 +174,13 @@ struct ActivityBar: View {
         VStack(spacing: 0) {
             // Top icons - matching Obsidian exactly
             VStack(spacing: 0) {
+                // AI Assistant Button (First!)
+                ActivityBarIcon(icon: "sparkles", isSelected: appViewModel.showAIPanel) {
+                    withAnimation(.spring(response: 0.3)) {
+                        appViewModel.showAIPanel.toggle()
+                    }
+                }
+                
                 ActivityBarIcon(icon: "doc.text.fill", isSelected: appViewModel.selectedSidebarItem == .files) {
                     appViewModel.selectedSidebarItem = .files
                 }
@@ -168,16 +189,16 @@ struct ActivityBar: View {
                     appViewModel.selectedSidebarItem = .search
                 }
                 
-                ActivityBarIcon(icon: "bookmark.fill", isSelected: false) {
-                    // Bookmarks
+                ActivityBarIcon(icon: "tag.fill", isSelected: appViewModel.selectedSidebarItem == .tags) {
+                    appViewModel.selectedSidebarItem = .tags
                 }
                 
-                ActivityBarIcon(icon: "doc.on.doc.fill", isSelected: false) {
-                    // Recent files
+                ActivityBarIcon(icon: "link", isSelected: appViewModel.selectedSidebarItem == .backlinks) {
+                    appViewModel.selectedSidebarItem = .backlinks
                 }
                 
-                ActivityBarIcon(icon: "star.fill", isSelected: false) {
-                    // Graph view
+                ActivityBarIcon(icon: "chart.bar.fill", isSelected: appViewModel.selectedSidebarItem == .stats) {
+                    appViewModel.selectedSidebarItem = .stats
                 }
                 
                 ActivityBarIcon(icon: "calendar", isSelected: appViewModel.selectedSidebarItem == .daily) {
@@ -185,15 +206,18 @@ struct ActivityBar: View {
                 }
                 
                 ActivityBarIcon(icon: "square.grid.2x2.fill", isSelected: false) {
-                    // Canvas view
+                    // Canvas view - show upgrade modal
+                    appViewModel.presentedSheet = .upgrade
                 }
                 
                 ActivityBarIcon(icon: "slider.horizontal.3", isSelected: false) {
                     // Settings/plugins
+                    appViewModel.presentedSheet = .preferences
                 }
                 
                 ActivityBarIcon(icon: "wrench.and.screwdriver.fill", isSelected: false) {
-                    // Tools
+                    // Tools - show command palette
+                    appViewModel.showCommandPalette = true
                 }
             }
             .padding(.top, 8)
@@ -335,8 +359,10 @@ struct VSCodeSidebar: View {
                         VSCodeTagsView(appViewModel: appViewModel)
                     case .backlinks:
                         VSCodeBacklinksView(appViewModel: appViewModel)
-                    default:
-                        EmptyView()
+                    case .daily:
+                        DailyNotesView(appViewModel: appViewModel)
+                    case .stats:
+                        StatisticsView(appViewModel: appViewModel)
                     }
                 }
             }
@@ -904,6 +930,19 @@ struct VSCodeEditor: View {
                         
                         // Right side toolbar buttons
                         HStack(spacing: 0) {
+                            // AI Assistant Button
+                            Button(action: {
+                                withAnimation(.spring(response: 0.3)) {
+                                    appViewModel.showAIPanel.toggle()
+                                }
+                            }) {
+                                Image(systemName: "sparkles")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(appViewModel.showAIPanel ? Color.accent : Color.tertiaryText)
+                                    .frame(width: 32, height: 36)
+                            }
+                            .buttonStyle(.plain)
+                            
                             Button(action: {}) {
                                 Image(systemName: "square.split.2x1")
                                     .font(.system(size: 14))
@@ -1206,7 +1245,7 @@ struct MarkdownTextEditor: NSViewRepresentable {
         var inCodeBlock = false
         var tableRowCount = 0
         
-        for (lineIndex, line) in lines.enumerated() {
+        for (_, line) in lines.enumerated() {
             let lineLength = (line as NSString).length
             let lineRange = NSRange(location: currentLocation, length: lineLength)
             let isCurrentLine = NSIntersectionRange(lineRange, currentLineRange).length > 0
@@ -1678,11 +1717,12 @@ struct CreateFolderView: View {
     }
 }
 
-// Quick Command Palette View
+// Quick Command Palette View with Keyboard Navigation
 struct QuickCommandPalette: View {
     @ObservedObject var appViewModel: AppViewModel
     @Binding var isPresented: Bool
     @State private var searchText = ""
+    @State private var selectedIndex = 0
     @FocusState private var isSearchFocused: Bool
     
     var filteredCommands: [QuickCommand] {
@@ -1697,7 +1737,6 @@ struct QuickCommandPalette: View {
             }),
             QuickCommand(title: "Open Folder", icon: "folder", action: {
                 isPresented = false
-                // Trigger folder picker
             }),
             QuickCommand(title: "Settings", icon: "gearshape", action: {
                 appViewModel.presentedSheet = .preferences
@@ -1705,6 +1744,10 @@ struct QuickCommandPalette: View {
             }),
             QuickCommand(title: "Search Notes", icon: "magnifyingglass", action: {
                 appViewModel.selectedSidebarItem = .search
+                isPresented = false
+            }),
+            QuickCommand(title: "Toggle AI Assistant", icon: "sparkles", action: {
+                appViewModel.showAIPanel.toggle()
                 isPresented = false
             }),
             QuickCommand(title: "Close Note", icon: "xmark", action: {
@@ -1731,6 +1774,9 @@ struct QuickCommandPalette: View {
                     .textFieldStyle(.plain)
                     .font(.system(size: 15))
                     .focused($isSearchFocused)
+                    .onSubmit {
+                        executeSelectedCommand()
+                    }
                 
                 if !searchText.isEmpty {
                     Button(action: { searchText = "" }) {
@@ -1747,21 +1793,64 @@ struct QuickCommandPalette: View {
             Divider()
             
             // Commands list
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(filteredCommands) { command in
-                        QuickCommandRow(command: command)
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ForEach(Array(filteredCommands.enumerated()), id: \.element.id) { index, command in
+                            QuickCommandRow(
+                                command: command,
+                                isSelected: index == selectedIndex
+                            )
+                            .id(index)
+                            .onTapGesture {
+                                command.action()
+                            }
+                        }
+                    }
+                }
+                .frame(maxHeight: 400)
+                .onChange(of: selectedIndex) { _, newValue in
+                    withAnimation {
+                        proxy.scrollTo(newValue, anchor: .center)
                     }
                 }
             }
-            .frame(maxHeight: 400)
         }
         .background(Color.secondaryBackground)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
         .onAppear {
             isSearchFocused = true
+            selectedIndex = 0
         }
+        .onChange(of: searchText) { _, _ in
+            selectedIndex = 0
+        }
+        .onKeyPress(.upArrow) {
+            if selectedIndex > 0 {
+                selectedIndex -= 1
+            }
+            return .handled
+        }
+        .onKeyPress(.downArrow) {
+            if selectedIndex < filteredCommands.count - 1 {
+                selectedIndex += 1
+            }
+            return .handled
+        }
+        .onKeyPress(.return) {
+            executeSelectedCommand()
+            return .handled
+        }
+        .onKeyPress(.escape) {
+            isPresented = false
+            return .handled
+        }
+    }
+    
+    private func executeSelectedCommand() {
+        guard selectedIndex < filteredCommands.count else { return }
+        filteredCommands[selectedIndex].action()
     }
 }
 
@@ -1774,28 +1863,36 @@ struct QuickCommand: Identifiable {
 
 struct QuickCommandRow: View {
     let command: QuickCommand
+    var isSelected: Bool = false
     @State private var isHovered = false
     
     var body: some View {
-        Button(action: command.action) {
-            HStack(spacing: 12) {
-                Image(systemName: command.icon)
-                    .font(.system(size: 16))
-                    .foregroundColor(Color.accent)
-                    .frame(width: 24)
-                
-                Text(command.title)
-                    .font(.system(size: 14))
-                    .foregroundColor(Color.primaryText)
-                
-                Spacer()
+        HStack(spacing: 12) {
+            Image(systemName: command.icon)
+                .font(.system(size: 16))
+                .foregroundColor(isSelected ? .white : Color.accent)
+                .frame(width: 24)
+            
+            Text(command.title)
+                .font(.system(size: 14))
+                .foregroundColor(isSelected ? .white : Color.primaryText)
+            
+            Spacer()
+            
+            if isSelected {
+                Image(systemName: "return")
+                    .font(.system(size: 12))
+                    .foregroundColor(.white.opacity(0.6))
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .background(isHovered ? Color.primaryBorder.opacity(0.3) : Color.clear)
-            .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 6)
+                .fill(isSelected ? Color.accent : (isHovered ? Color.primaryBorder.opacity(0.3) : Color.clear))
+        )
+        .padding(.horizontal, 8)
+        .contentShape(Rectangle())
         .onHover { hovering in
             isHovered = hovering
         }
@@ -2164,4 +2261,331 @@ struct AboutView: View {
 #Preview {
     VSCodeStyleView(appViewModel: AppViewModel())
         .preferredColorScheme(.dark)
+}
+
+// Upgrade View
+struct UpgradeView: View {
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            // Header
+            HStack {
+                Spacer()
+                
+                Button(action: { dismiss() }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(Color.tertiaryText)
+                }
+                .buttonStyle(.plain)
+                .padding(16)
+            }
+            
+            // Content
+            VStack(spacing: 32) {
+                // Icon
+                Image(systemName: "star.circle.fill")
+                    .font(.system(size: 80))
+                    .foregroundColor(Color.accent)
+                
+                // Title
+                VStack(spacing: 8) {
+                    Text("Upgrade to Pro")
+                        .font(.system(size: 32, weight: .bold))
+                        .foregroundColor(Color.primaryText)
+                    
+                    Text("Unlock all features and support development")
+                        .font(.system(size: 16))
+                        .foregroundColor(Color.secondaryText)
+                }
+                
+                // Features
+                VStack(alignment: .leading, spacing: 16) {
+                    UpgradeFeatureRow(icon: "infinity", title: "Unlimited Notes", description: "Create as many notes as you want")
+                    UpgradeFeatureRow(icon: "icloud.fill", title: "Cloud Sync", description: "Sync across all your devices")
+                    UpgradeFeatureRow(icon: "chart.bar.fill", title: "Advanced Analytics", description: "Detailed insights")
+                    UpgradeFeatureRow(icon: "paintbrush.fill", title: "Custom Themes", description: "Personalize your workspace")
+                }
+                .padding(.horizontal, 40)
+                
+                // CTA Button
+                Button(action: {
+                    dismiss()
+                }) {
+                    Text("Upgrade Now")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: 300)
+                        .padding(.vertical, 16)
+                        .background(Color.accent)
+                        .cornerRadius(12)
+                }
+                .buttonStyle(.plain)
+            }
+            .padding(.bottom, 40)
+            
+            Spacer()
+        }
+        .frame(width: 600, height: 600)
+        .background(Color.primaryBackground)
+    }
+}
+
+struct UpgradeFeatureRow: View {
+    let icon: String
+    let title: String
+    let description: String
+    
+    var body: some View {
+        HStack(spacing: 16) {
+            Image(systemName: icon)
+                .font(.system(size: 24))
+                .foregroundColor(Color.accent)
+                .frame(width: 40)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(Color.primaryText)
+                
+                Text(description)
+                    .font(.system(size: 14))
+                    .foregroundColor(Color.secondaryText)
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+
+// MARK: - AI Assistant Panel
+struct AIAssistantPanel: View {
+    @ObservedObject var appViewModel: AppViewModel
+    @State private var userInput = ""
+    @State private var messages: [AIMessage] = [
+        AIMessage(role: .assistant, content: "Hello! I'm your AI assistant. I can help you with:\n\n• Writing and editing notes\n• Summarizing content\n• Generating ideas\n• Answering questions\n\nHow can I help you today?")
+    ]
+    @FocusState private var isInputFocused: Bool
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            // Header
+            HStack {
+                HStack(spacing: 8) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(Color.accent)
+                    
+                    Text("AI Assistant")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(Color.primaryText)
+                }
+                
+                Spacer()
+                
+                Button(action: {
+                    withAnimation(.spring(response: 0.3)) {
+                        appViewModel.showAIPanel = false
+                    }
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color.tertiaryText)
+                }
+                .buttonStyle(.plain)
+            }
+            .padding()
+            .background(Color.secondaryBackground)
+            
+            Divider()
+            
+            // Messages
+            ScrollView {
+                VStack(spacing: 16) {
+                    ForEach(messages) { message in
+                        AIMessageBubble(message: message)
+                    }
+                }
+                .padding()
+            }
+            
+            Divider()
+            
+            // Input Area
+            VStack(spacing: 12) {
+                HStack(spacing: 12) {
+                    TextField("Ask me anything...", text: $userInput, axis: .vertical)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 13))
+                        .foregroundColor(Color.primaryText)
+                        .focused($isInputFocused)
+                        .lineLimit(1...5)
+                        .onSubmit {
+                            sendMessage()
+                        }
+                    
+                    Button(action: sendMessage) {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.system(size: 24))
+                            .foregroundColor(userInput.isEmpty ? Color.tertiaryText : Color.accent)
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(userInput.isEmpty)
+                }
+                .padding(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.tertiaryBackground)
+                )
+                
+                // Quick Actions
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        QuickActionButton(icon: "lightbulb.fill", title: "Ideas") {
+                            userInput = "Give me some ideas for my note"
+                        }
+                        QuickActionButton(icon: "doc.text.fill", title: "Summarize") {
+                            userInput = "Summarize this note"
+                        }
+                        QuickActionButton(icon: "pencil.line", title: "Improve") {
+                            userInput = "Help me improve this text"
+                        }
+                        QuickActionButton(icon: "text.quote", title: "Explain") {
+                            userInput = "Explain this concept"
+                        }
+                    }
+                }
+            }
+            .padding()
+            .background(Color.secondaryBackground)
+        }
+        .background(Color.primaryBackground)
+        .onAppear {
+            isInputFocused = true
+        }
+    }
+    
+    private func sendMessage() {
+        guard !userInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        
+        let messageText = userInput
+        userInput = ""
+        
+        // Add user message
+        messages.append(AIMessage(role: .user, content: messageText))
+        
+        // Get current note context
+        let context = appViewModel.selectedNote?.content
+        
+        // Send to real AI service
+        Task {
+            do {
+                let response = try await appViewModel.aiService.sendMessage(
+                    messageText,
+                    apiKey: appViewModel.geminiAPIKey,
+                    context: context
+                )
+                
+                await MainActor.run {
+                    messages.append(AIMessage(
+                        role: .assistant,
+                        content: response
+                    ))
+                }
+            } catch {
+                await MainActor.run {
+                    messages.append(AIMessage(
+                        role: .assistant,
+                        content: "Error: \(error.localizedDescription)"
+                    ))
+                }
+            }
+        }
+    }
+}
+
+struct AIMessage: Identifiable {
+    let id = UUID()
+    let role: MessageRole
+    let content: String
+    let timestamp = Date()
+    
+    enum MessageRole {
+        case user
+        case assistant
+    }
+}
+
+struct AIMessageBubble: View {
+    let message: AIMessage
+    
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            if message.role == .assistant {
+                // AI Avatar
+                ZStack {
+                    Circle()
+                        .fill(
+                            LinearGradient(
+                                colors: [Color.accent, Color.accentSecondary],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .frame(width: 32, height: 32)
+                    
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.white)
+                }
+            }
+            
+            VStack(alignment: message.role == .user ? .trailing : .leading, spacing: 4) {
+                Text(message.content)
+                    .font(.system(size: 13))
+                    .foregroundColor(message.role == .user ? .white : Color.primaryText)
+                    .padding(12)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(message.role == .user ? Color.accent : Color.tertiaryBackground)
+                    )
+                
+                Text(message.timestamp, style: .time)
+                    .font(.system(size: 10))
+                    .foregroundColor(Color.tertiaryText)
+            }
+            
+            if message.role == .user {
+                Spacer()
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: message.role == .user ? .trailing : .leading)
+    }
+}
+
+struct QuickActionButton: View {
+    let icon: String
+    let title: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.system(size: 11))
+                Text(title)
+                    .font(.system(size: 11, weight: .medium))
+            }
+            .foregroundColor(Color.secondaryText)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.tertiaryBackground)
+            )
+        }
+        .buttonStyle(.plain)
+    }
 }

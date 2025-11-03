@@ -134,7 +134,7 @@ struct EnhancedTagsView: View {
                                     .foregroundColor(.white)
                                 
                                 Button {
-                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                    _ = withAnimation(.easeInOut(duration: 0.2)) {
                                         appViewModel.selectedTags.remove(tag)
                                     }
                                     HapticManager.shared.lightImpact()

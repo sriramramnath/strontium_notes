@@ -21,20 +21,20 @@ enum ObsidianUI {
     static let mediumRadius: CGFloat = 6
     static let largeRadius: CGFloat = 8
     
-    // Sidebar
-    static let sidebarWidth: CGFloat = 280
-    static let sidebarHeaderHeight: CGFloat = 44
-    static let sidebarItemHeight: CGFloat = 28
-    static let sidebarIconSize: CGFloat = 16
-    static let sidebarIndent: CGFloat = 20
+    // Sidebar - more compact like Obsidian
+    static let sidebarWidth: CGFloat = 240
+    static let sidebarHeaderHeight: CGFloat = 36
+    static let sidebarItemHeight: CGFloat = 24
+    static let sidebarIconSize: CGFloat = 14
+    static let sidebarIndent: CGFloat = 16
     
-    // Font sizes
-    static let tinyFont: CGFloat = 10
-    static let smallFont: CGFloat = 12
-    static let bodyFont: CGFloat = 13
-    static let mediumFont: CGFloat = 14
-    static let largeFont: CGFloat = 16
-    static let titleFont: CGFloat = 18
+    // Font sizes - smaller like Obsidian
+    static let tinyFont: CGFloat = 9
+    static let smallFont: CGFloat = 11
+    static let bodyFont: CGFloat = 12
+    static let mediumFont: CGFloat = 13
+    static let largeFont: CGFloat = 14
+    static let titleFont: CGFloat = 16
     
     // Icon sizes
     static let tinyIcon: CGFloat = 12

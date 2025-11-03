@@ -1,0 +1,54 @@
+{
+  "fill-specializations" : [
+    {
+      "value" : {
+        "linear-gradient" : [
+          "display-p3:0.57945,0.00582,0.00000,1.00000",
+          "display-p3:0.96783,0.33726,0.00000,1.00000"
+        ]
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "linear-gradient" : [
+          "display-p3:0.00000,0.00000,0.00000,1.00000",
+          "display-p3:0.38404,0.09600,0.07281,1.00000"
+        ]
+      }
+    }
+  ],
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "Background.png",
+          "name" : "Background",
+          "position" : {
+            "scale" : 2,
+            "translation-in-points" : [
+              5.141570350252749,
+              6.619098590377192
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : [
+      "macOS"
+    ]
+  }
+}

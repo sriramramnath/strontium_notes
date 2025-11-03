@@ -1,0 +1,80 @@
+{
+  "source": "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/NoteRowView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld words",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "+%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "#%@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 55
+        }
+      },
+      {
+        "comment": "",
+        "key": "Note title",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "Rename",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 154
+        }
+      },
+      {
+        "comment": "",
+        "key": "Duplicate",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 161
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 169
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld words",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 220
+        }
+      },
+      {
+        "comment": "",
+        "key": "Modified %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 226
+        }
+      }
+    ]
+  },
+  "version": 1
+}

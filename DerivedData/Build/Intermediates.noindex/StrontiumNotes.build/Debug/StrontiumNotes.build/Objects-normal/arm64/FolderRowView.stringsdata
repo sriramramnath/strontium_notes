@@ -1,0 +1,56 @@
+{
+  "source": "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/FolderRowView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 98
+        }
+      },
+      {
+        "comment": "",
+        "key": "Folder name",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Note",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Folder",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Rename",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 150
+        }
+      }
+    ]
+  },
+  "version": 1
+}

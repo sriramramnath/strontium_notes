@@ -1,0 +1,44 @@
+{
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/NoteRowView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteRowView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteRowView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteRowView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteRowView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NoteRowView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/NotionEditor.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NotionEditor.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NotionEditor.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NotionEditor.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NotionEditor.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/NotionEditor.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/ObsidianAboutView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianAboutView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianAboutView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianAboutView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianAboutView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianAboutView.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/ObsidianButtonStyles.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianButtonStyles.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianButtonStyles.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianButtonStyles.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianButtonStyles.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianButtonStyles.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/ObsidianConstants.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianConstants.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianConstants.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianConstants.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianConstants.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianConstants.swiftdeps"
+  },
+  "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/ObsidianCreateVaultView.swift" : {
+    "const-values" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianCreateVaultView.swiftconstvalues",
+    "dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianCreateVaultView.d",
+    "diagnostics" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianCreateVaultView.dia",
+    "object" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianCreateVaultView.o",
+    "swift-dependencies" : "/Users/sriram/Desktop/Code/Strontium Notes/DerivedData/Build/Intermediates.noindex/StrontiumNotes.build/Debug/StrontiumNotes.build/Objects-normal/arm64/ObsidianCreateVaultView.swiftdeps"
+  }
+}

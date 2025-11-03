@@ -1,0 +1,80 @@
+{
+  "source": "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/EnhancedTagsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Tags",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld tags",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "Search tags...",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 52
+        }
+      },
+      {
+        "comment": "",
+        "key": "Filtered by tags:",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 107
+        }
+      },
+      {
+        "comment": "",
+        "key": "Clear all",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "#%@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 206
+        }
+      },
+      {
+        "comment": "",
+        "key": "Show notes with this tag",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 252
+        }
+      },
+      {
+        "comment": "",
+        "key": "Copy tag name",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 262
+        }
+      }
+    ]
+  },
+  "version": 1
+}

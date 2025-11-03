@@ -4,41 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b76cbd3c6f44336c",
+        "id": "eb08c806ba5f37b9",
         "type": "tabs",
         "children": [
           {
-            "id": "04978790035db56b",
+            "id": "fd1091bbeee22b55",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Markdown/DEVELOPER_GUIDE.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "DEVELOPER_GUIDE"
-            }
-          }
-        ]
-      },
-      {
-        "id": "a555c3cc809b6127",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "eb46f17a5bd7a33f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Markdown/DEVELOPER_GUIDE.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DEVELOPER_GUIDE"
+              "title": "New tab"
             }
           }
         ]
@@ -190,8 +166,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "eb46f17a5bd7a33f",
+  "active": "fd1091bbeee22b55",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "2025-11-01.md",
+    "Untitled.base",
+    "Markdown/DEVELOPER_GUIDE.md",
     "Untitled Note 17.md",
     "Untitled Note 16.md",
     "Untitled Note 15.md",
@@ -199,7 +179,6 @@
     "Untitled Note 13.md",
     "Untitled Note 12.md",
     "Untitled.md",
-    "Markdown/DEVELOPER_GUIDE.md",
     "Untitled",
     "Markdown/CODE_REVIEW.md",
     "Strontium Notes/Views/ObsidianMainView.swift",

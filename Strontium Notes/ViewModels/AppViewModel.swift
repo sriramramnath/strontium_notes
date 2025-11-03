@@ -21,8 +21,22 @@ class AppViewModel: ObservableObject {
     @Published var editorMode: EditorMode = .wysiwym
     @Published var isEditingNote = false
     @Published var showCommandPalette = false
+    @Published var showAIPanel = false
     @Published var currentError: Error?
     @Published var showError = false
+    
+    // AI Settings
+    @Published var aiProvider: AIProvider = .gemini
+    @Published var geminiAPIKey: String = "" {
+        didSet {
+            // Save to UserDefaults whenever it changes
+            UserDefaults.standard.set(geminiAPIKey, forKey: "geminiAPIKey")
+        }
+    }
+    
+    // Tab management
+    @Published var openTabs: [NoteTab] = []
+    @Published var activeTabId: UUID?
     
     // Centralized modal state
     @Published var presentedSheet: PresentedSheet? = nil
@@ -32,6 +46,12 @@ class AppViewModel: ObservableObject {
     @Published var workspaceLayout: WorkspaceLayout = WorkspaceLayout()
     @Published var enableMultiPane = false
     
+    // View state
+    @Published var showFileExtensions = false
+    @Published var expandedFolders: Set<String> = ["root"]
+    @Published var viewMode: ViewMode = .edit
+    @Published var splitViewMode: SplitViewMode = .none
+    
     // Services
     let vaultManager: VaultManager
     let noteManager: NoteManager
@@ -40,6 +60,7 @@ class AppViewModel: ObservableObject {
     let searchEngine: SearchEngine
     let tagManager: TagManager
     let attachmentManager: AttachmentManager
+    let aiService = AIService()
     
     // Mock data for UI development (kept for backward compatibility)
     @Published var mockNotes: [Note] = []
@@ -72,6 +93,11 @@ class AppViewModel: ObservableObject {
         self.searchEngine = SearchEngine()
         self.tagManager = TagManager()
         self.attachmentManager = AttachmentManager()
+        
+        // Load saved API key
+        if let savedAPIKey = UserDefaults.standard.string(forKey: "geminiAPIKey") {
+            self.geminiAPIKey = savedAPIKey
+        }
         
         setupBindings()
         setupMockData()
@@ -118,9 +144,15 @@ class AppViewModel: ObservableObject {
             await searchEngine.buildIndex(for: vault)
             await tagManager.rebuildTagIndex(for: vault)
         } catch {
-            ErrorHandler.log(error, context: "openVault")
-            currentError = error
-            showError = true
+            // Only show error if it's not a permission error on startup
+            let nsError = error as NSError
+            if nsError.domain != NSCocoaErrorDomain || nsError.code != NSFileReadNoPermissionError {
+                ErrorHandler.log(error, context: "openVault")
+                await MainActor.run {
+                    currentError = error
+                    showError = true
+                }
+            }
         }
     }
     
@@ -139,7 +171,7 @@ class AppViewModel: ObservableObject {
     }
     
     func selectNote(_ note: Note) {
-        selectedNote = note
+        openNoteInTab(note)
         editorMode = .wysiwym // Always open notes in WYSIWYM mode
         isEditingNote = false
     }
@@ -214,14 +246,35 @@ class AppViewModel: ObservableObject {
         guard let vault = currentVault else { return }
         
         do {
-            try await noteManager.deleteNote(note)
+            // Get absolute path
+            let fileURL = vault.rootURL.appendingPathComponent(note.filePath)
+            
+            // Check if file exists
+            guard FileManager.default.fileExists(atPath: fileURL.path) else {
+                throw NoteError.fileNotFound
+            }
+            
+            // Delete the actual file
+            try FileManager.default.removeItem(at: fileURL)
+            
             await searchEngine.removeFromIndex(noteID: note.id, in: vault)
             await tagManager.removeTagsForNote(note.id, in: vault)
-            try await vaultManager.refreshCurrentVault()
             
+            // Remove from mockNotes array
+            await MainActor.run {
+                mockNotes.removeAll { $0.id == note.id }
+            }
+            
+            // Close any tabs with this note
+            openTabs.removeAll { $0.noteId == note.id }
+            
+            // Clear selection if this note was selected
             if selectedNote?.id == note.id {
                 selectedNote = nil
+                activeTabId = nil
             }
+            
+            try await vaultManager.refreshCurrentVault()
         } catch {
             ErrorHandler.log(error, context: "deleteNote")
             currentError = error
@@ -233,7 +286,30 @@ class AppViewModel: ObservableObject {
         guard let vault = currentVault else { return }
         
         do {
-            let renamedNote = try await noteManager.renameNote(note, to: newTitle)
+            // Get absolute paths
+            let oldURL = vault.rootURL.appendingPathComponent(note.filePath)
+            let directory = oldURL.deletingLastPathComponent()
+            let newFileName = sanitizeFileName(newTitle) + ".md"
+            let newURL = directory.appendingPathComponent(newFileName)
+            
+            // Check if file exists
+            guard FileManager.default.fileExists(atPath: oldURL.path) else {
+                throw NoteError.fileNotFound
+            }
+            
+            // Check if target already exists
+            if FileManager.default.fileExists(atPath: newURL.path) {
+                throw NoteError.duplicateTitle
+            }
+            
+            // Move the actual file
+            try FileManager.default.moveItem(at: oldURL, to: newURL)
+            
+            // Calculate new relative path
+            let newRelativePath = newURL.path.replacingOccurrences(of: vault.rootURL.path + "/", with: "")
+            
+            // Create renamed note
+            let renamedNote = Note(filePath: newRelativePath, title: newTitle, content: note.content)
             
             // Update all links to this note
             _ = try await linkResolver.updateLinksForRenamedNote(
@@ -242,13 +318,32 @@ class AppViewModel: ObservableObject {
                 in: vault
             )
             
-            try await vaultManager.refreshCurrentVault()
+            // Update mockNotes array
+            await MainActor.run {
+                if let index = mockNotes.firstIndex(where: { $0.id == note.id }) {
+                    mockNotes[index] = renamedNote
+                }
+            }
+            
+            // Update open tabs
+            if let tabIndex = openTabs.firstIndex(where: { $0.noteId == note.id }) {
+                openTabs[tabIndex].title = newTitle
+            }
+            
+            // Update selected note
             selectedNote = renamedNote
+            
+            try await vaultManager.refreshCurrentVault()
         } catch {
             ErrorHandler.log(error, context: "renameNote")
             currentError = error
             showError = true
         }
+    }
+    
+    private func sanitizeFileName(_ name: String) -> String {
+        let invalidCharacters = CharacterSet(charactersIn: ":/\\?%*|\"<>")
+        return name.components(separatedBy: invalidCharacters).joined(separator: "-")
     }
     
     func searchNotes(query: String) async -> [SearchResult] {
@@ -358,6 +453,58 @@ class AppViewModel: ObservableObject {
             enableMultiPane = false
         }
     }
+    
+    // MARK: - Sorting Operations
+    
+    func sortNotes(by option: SortOption) {
+        sortOption = option
+        switch option {
+        case .nameAscending:
+            mockNotes.sort { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending }
+        case .nameDescending:
+            mockNotes.sort { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedDescending }
+        case .dateModified:
+            mockNotes.sort { $0.modifiedDate > $1.modifiedDate }
+        case .dateCreated:
+            mockNotes.sort { $0.createdDate > $1.createdDate }
+        }
+    }
+    
+    // MARK: - Folder Operations
+    
+    func collapseAllFolders() {
+        expandedFolders.removeAll()
+    }
+    
+    func expandAllFolders() {
+        expandedFolders = Set(mockFolders.map { $0.id.uuidString })
+        expandedFolders.insert("root")
+    }
+    
+    func toggleFolderExpansion(_ folderId: String) {
+        if expandedFolders.contains(folderId) {
+            expandedFolders.remove(folderId)
+        } else {
+            expandedFolders.insert(folderId)
+        }
+    }
+    
+    // MARK: - View Mode Operations
+    
+    func toggleViewMode() {
+        switch viewMode {
+        case .edit:
+            viewMode = .reading
+        case .reading:
+            viewMode = .source
+        case .source:
+            viewMode = .edit
+        }
+    }
+    
+    func setSplitView(_ mode: SplitViewMode) {
+        splitViewMode = mode
+    }
 }
 
 // MARK: - Supporting Types
@@ -433,6 +580,7 @@ enum PresentedSheet: Identifiable {
     case about
     case renameNote
     case createFolder
+    case upgrade
     
     var id: String {
         switch self {
@@ -442,6 +590,83 @@ enum PresentedSheet: Identifiable {
         case .about: return "about"
         case .renameNote: return "renameNote"
         case .createFolder: return "createFolder"
+        case .upgrade: return "upgrade"
         }
     }
+}
+
+/// View modes for the editor
+enum ViewMode: String {
+    case edit = "Edit"
+    case reading = "Reading"
+    case source = "Source"
+}
+
+/// Split view modes
+enum SplitViewMode: String {
+    case none = "None"
+    case horizontal = "Horizontal"
+    case vertical = "Vertical"
+}
+
+/// AI Provider options
+enum AIProvider: String, CaseIterable {
+    case gemini = "Google Gemini"
+    
+    var icon: String {
+        return "sparkles"
+    }
+}
+
+// MARK: - Tab Management
+extension AppViewModel {
+    func openNoteInTab(_ note: Note) {
+        // Check if note is already open in a tab
+        if let existingTab = openTabs.first(where: { $0.noteId == note.id }) {
+            activeTabId = existingTab.id
+            selectedNote = note
+            return
+        }
+        
+        // Create new tab
+        let newTab = NoteTab(noteId: note.id, title: note.title)
+        openTabs.append(newTab)
+        activeTabId = newTab.id
+        selectedNote = note
+    }
+    
+    func closeTab(_ tabId: UUID) {
+        guard let index = openTabs.firstIndex(where: { $0.id == tabId }) else { return }
+        openTabs.remove(at: index)
+        
+        // If closing active tab, switch to another tab
+        if activeTabId == tabId {
+            if !openTabs.isEmpty {
+                let newIndex = min(index, openTabs.count - 1)
+                activeTabId = openTabs[newIndex].id
+                if let note = mockNotes.first(where: { $0.id == openTabs[newIndex].noteId }) {
+                    selectedNote = note
+                }
+            } else {
+                activeTabId = nil
+                selectedNote = nil
+            }
+        }
+    }
+    
+    func switchToTab(_ tabId: UUID) {
+        guard let tab = openTabs.first(where: { $0.id == tabId }) else { return }
+        activeTabId = tabId
+        if let note = mockNotes.first(where: { $0.id == tab.noteId }) {
+            selectedNote = note
+        }
+    }
+}
+
+// MARK: - NoteTab Model
+
+struct NoteTab: Identifiable {
+    let id = UUID()
+    let noteId: UUID
+    var title: String
 }

@@ -71,6 +71,8 @@ struct ObsidianPreferencesView: View {
                         ObsidianGeneralPreferencesView()
                     case .editor:
                         ObsidianEditorPreferencesView()
+                    case .ai:
+                        ObsidianAIPreferencesView(appViewModel: appViewModel)
                     case .appearance:
                         ObsidianAppearancePreferencesView()
                     case .about:
@@ -91,6 +93,7 @@ struct ObsidianPreferencesView: View {
 enum ObsidianPreferencesTab: String, CaseIterable {
     case general = "General"
     case editor = "Editor"
+    case ai = "AI Assistant"
     case appearance = "Appearance"
     case about = "About"
     
@@ -98,6 +101,7 @@ enum ObsidianPreferencesTab: String, CaseIterable {
         switch self {
         case .general: return "gearshape"
         case .editor: return "square.and.pencil"
+        case .ai: return "sparkles"
         case .appearance: return "paintbrush"
         case .about: return "info.circle"
         }
@@ -320,4 +324,140 @@ struct ObsidianAboutPreferencesView: View {
 
 #Preview {
     ObsidianPreferencesView(appViewModel: AppViewModel())
+}
+
+// MARK: - AI Preferences
+struct ObsidianAIPreferencesView: View {
+    @ObservedObject var appViewModel: AppViewModel
+    
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                // Header
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("AI Assistant")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(.white)
+                    
+                    Text("Configure your AI provider and API keys")
+                        .font(.system(size: 13))
+                        .foregroundColor(.gray)
+                }
+                
+                Divider()
+                    .background(Color.gray.opacity(0.3))
+                
+                // Provider Selection
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("AI Provider")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.white)
+                    
+                    ForEach(AIProvider.allCases, id: \.self) { provider in
+                        AIProviderOption(
+                            provider: provider,
+                            isSelected: appViewModel.aiProvider == provider
+                        ) {
+                            appViewModel.aiProvider = provider
+                        }
+                    }
+                }
+                
+                Divider()
+                    .background(Color.gray.opacity(0.3))
+                
+                // API Keys
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("API Keys")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.white)
+                    
+                    // Gemini API Key
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Image(systemName: "sparkles")
+                                .foregroundColor(Color.accent)
+                            Text("Google Gemini API Key")
+                                .font(.system(size: 13))
+                                .foregroundColor(.white)
+                        }
+                        
+                        TextField("Enter your Gemini API key", text: $appViewModel.geminiAPIKey)
+                            .textFieldStyle(.plain)
+                            .font(.system(size: 13, design: .monospaced))
+                            .padding(10)
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(6)
+                            .foregroundColor(.white)
+                        
+                        Link("Get API Key →", destination: URL(string: "https://makersuite.google.com/app/apikey")!)
+                            .font(.system(size: 12))
+                            .foregroundColor(Color.accent)
+                    }
+                }
+                
+                Divider()
+                    .background(Color.gray.opacity(0.3))
+                
+                // Info
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(.blue)
+                        Text("About API Keys")
+                            .font(.system(size: 13, weight: .medium))
+                            .foregroundColor(.white)
+                    }
+                    
+                    Text("Your API keys are stored locally and never shared. They are used only to communicate with your chosen AI provider.")
+                        .font(.system(size: 12))
+                        .foregroundColor(.gray)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(12)
+                .background(Color.blue.opacity(0.1))
+                .cornerRadius(8)
+            }
+            .padding(24)
+        }
+        .background(Color.black)
+    }
+}
+
+struct AIProviderOption: View {
+    let provider: AIProvider
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                Image(systemName: provider.icon)
+                    .font(.system(size: 16))
+                    .foregroundColor(isSelected ? Color.accent : .gray)
+                    .frame(width: 24)
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(provider.rawValue)
+                        .font(.system(size: 14))
+                        .foregroundColor(.white)
+                    
+                    Text("Google's latest AI model")
+                        .font(.system(size: 11))
+                        .foregroundColor(.gray)
+                }
+                
+                Spacer()
+                
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(Color.accent)
+                }
+            }
+            .padding(12)
+            .background(isSelected ? Color.accent.opacity(0.1) : Color.gray.opacity(0.1))
+            .cornerRadius(8)
+        }
+        .buttonStyle(.plain)
+    }
 }

@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80CD00C02EB669B40022A504 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288CF2EB6660500615D6D /* Folder.swift */; };
+		80CD00C12EB669B40022A504 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D02EB6660500615D6D /* Note.swift */; };
+		80CD00C22EB669B40022A504 /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D12EB6660500615D6D /* SearchModels.swift */; };
+		80CD00C32EB669B40022A504 /* Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D22EB6660500615D6D /* Vault.swift */; };
+		80CD00C42EB669B40022A504 /* WikiLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D32EB6660500615D6D /* WikiLink.swift */; };
+		80CD00C52EB669B40022A504 /* WorkspaceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D42EB6660500615D6D /* WorkspaceLayout.swift */; };
+		80CD00C62EB669B40022A504 /* AttachmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D62EB6660500615D6D /* AttachmentManager.swift */; };
+		80CD00C72EB669B40022A504 /* FileSystemWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D72EB6660500615D6D /* FileSystemWatcher.swift */; };
+		80CD00C82EB669B40022A504 /* LinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D82EB6660500615D6D /* LinkResolver.swift */; };
+		80CD00C92EB669B40022A504 /* LinkResolverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288D92EB6660500615D6D /* LinkResolverProtocol.swift */; };
+		80CD00CA2EB669B40022A504 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288DA2EB6660500615D6D /* NoteManager.swift */; };
+		80CD00CB2EB669B40022A504 /* NoteManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288DB2EB6660500615D6D /* NoteManagerProtocol.swift */; };
+		80CD00CC2EB669B40022A504 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288DC2EB6660500615D6D /* SearchEngine.swift */; };
+		80CD00CD2EB669B40022A504 /* SearchEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288DD2EB6660500615D6D /* SearchEngineProtocol.swift */; };
+		80CD00CE2EB669B40022A504 /* VaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288DE2EB6660500615D6D /* VaultManager.swift */; };
+		80EB66715C10F24FE4BD20DF /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B24FD8472E748EA9CA0EA /* AIService.swift */; };
+		80CD00CF2EB669B40022A504 /* VaultManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288DF2EB6660500615D6D /* VaultManagerProtocol.swift */; };
+		80CD00D02EB669B40022A504 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E12EB6660500615D6D /* Debouncer.swift */; };
+		80CD00D12EB669B40022A504 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E22EB6660500615D6D /* ErrorHandler.swift */; };
+		80CD00D22EB669B40022A504 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E32EB6660500615D6D /* HapticManager.swift */; };
+		80CD00D32EB669B40022A504 /* KeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E42EB6660500615D6D /* KeyboardShortcuts.swift */; };
+		80CD00D42EB669B40022A504 /* MarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E52EB6660500615D6D /* MarkdownParser.swift */; };
+		80CD00D52EB669B40022A504 /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E62EB6660500615D6D /* SyntaxHighlighter.swift */; };
+		80CD00D62EB669B40022A504 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288E82EB6660500615D6D /* AppViewModel.swift */; };
+		80CD00D72EB669B40022A504 /* AnimatedButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288EA2EB6660500615D6D /* AnimatedButtonStyles.swift */; };
+		80CD00D82EB669B40022A504 /* BacklinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288EB2EB6660500615D6D /* BacklinksView.swift */; };
+		80CD00D92EB669B40022A504 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288EC2EB6660500615D6D /* ColorScheme.swift */; };
+		80CD00DA2EB669B40022A504 /* CommandPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288ED2EB6660500615D6D /* CommandPaletteView.swift */; };
+		80CD00DB2EB669B40022A504 /* CreateVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288EE2EB6660500615D6D /* CreateVaultView.swift */; };
+		80CD00DC2EB669B40022A504 /* DailyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288EF2EB6660500615D6D /* DailyNotesView.swift */; };
+		80CD00DD2EB669B40022A504 /* EnhancedBacklinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F02EB6660500615D6D /* EnhancedBacklinksView.swift */; };
+		80CD00DE2EB669B40022A504 /* EnhancedSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F12EB6660500615D6D /* EnhancedSidebarView.swift */; };
+		80CD00DF2EB669B40022A504 /* EnhancedTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F22EB6660500615D6D /* EnhancedTagsView.swift */; };
+		80CD00E02EB669B40022A504 /* FilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F32EB6660500615D6D /* FilesView.swift */; };
+		80CD00E12EB669B40022A504 /* FolderRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F42EB6660500615D6D /* FolderRowView.swift */; };
+		80CD00E22EB669B40022A504 /* KeyboardShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F52EB6660500615D6D /* KeyboardShortcutsView.swift */; };
+		80CD00E32EB669B40022A504 /* NoteEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F62EB6660500615D6D /* NoteEditorView.swift */; };
+		80CD00E42EB669B40022A504 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F72EB6660500615D6D /* NoteListView.swift */; };
+		80CD00E52EB669B40022A504 /* NoteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F82EB6660500615D6D /* NoteRowView.swift */; };
+		80CD00E62EB669B40022A504 /* NotionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288F92EB6660500615D6D /* NotionEditor.swift */; };
+		80CD00E72EB669B40022A504 /* ObsidianAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288FA2EB6660500615D6D /* ObsidianAboutView.swift */; };
+		80CD00E82EB669B40022A504 /* ObsidianButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288FB2EB6660500615D6D /* ObsidianButtonStyles.swift */; };
+		80CD00E92EB669B40022A504 /* ObsidianConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288FC2EB6660500615D6D /* ObsidianConstants.swift */; };
+		80CD00EA2EB669B40022A504 /* ObsidianCreateVaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288FD2EB6660500615D6D /* ObsidianCreateVaultView.swift */; };
+		80CD00EB2EB669B40022A504 /* ObsidianEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288FE2EB6660500615D6D /* ObsidianEditorView.swift */; };
+		80CD00EC2EB669B40022A504 /* ObsidianPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809288FF2EB6660500615D6D /* ObsidianPreferencesView.swift */; };
+		80CD00ED2EB669B40022A504 /* ObsidianRightSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289002EB6660500615D6D /* ObsidianRightSidebarView.swift */; };
+		80CD00EE2EB669B40022A504 /* ObsidianSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289012EB6660500615D6D /* ObsidianSidebarView.swift */; };
+		80CD0B042EB669B40022A504 /* ObsidianStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289042EB6660500615D6D /* ObsidianStyleView.swift */; };
+		80CD00EF2EB669B40022A504 /* ObsidianVaultPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289022EB6660500615D6D /* ObsidianVaultPickerView.swift */; };
+		80CD00F02EB669B40022A504 /* ObsidianWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289032EB6660500615D6D /* ObsidianWelcomeView.swift */; };
+		80CD00F12EB669B40022A504 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289042EB6660500615D6D /* PreferencesView.swift */; };
+		80CD00F22EB669B40022A504 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289052EB6660500615D6D /* SearchView.swift */; };
+		80CD00F32EB669B40022A504 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289062EB6660500615D6D /* SidebarView.swift */; };
+		80CD00F42EB669B40022A504 /* SimpleTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289072EB6660500615D6D /* SimpleTextEditor.swift */; };
+		80CD00F52EB669B40022A504 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289082EB6660500615D6D /* StatisticsView.swift */; };
+		80CD00F62EB669B40022A504 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289092EB6660500615D6D /* TagsView.swift */; };
+		80CD00F72EB669B40022A504 /* VaultPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092890A2EB6660500615D6D /* VaultPickerView.swift */; };
+		80CD00F82EB669B40022A504 /* VSCodeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092890B2EB6660500615D6D /* VSCodeStyleView.swift */; };
+		80CD00F92EB669B40022A504 /* WYSIWYMEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092890C2EB6660500615D6D /* WYSIWYMEditor.swift */; };
+		80CD00FA2EB669B40022A504 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092890F2EB6660500615D6D /* ContentView.swift */; };
+		80CD00FB2EB669B40022A504 /* Strontium_NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809289112EB6660500615D6D /* Strontium_NotesApp.swift */; };
+		80CD01002EB66B560022A504 /* icon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 80CD00FF2EB66B560022A504 /* icon.icon */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		809288CF2EB6660500615D6D /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		809288D02EB6660500615D6D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		809288D12EB6660500615D6D /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
+		809288D22EB6660500615D6D /* Vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vault.swift; sourceTree = "<group>"; };
+		809288D32EB6660500615D6D /* WikiLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiLink.swift; sourceTree = "<group>"; };
+		809288D42EB6660500615D6D /* WorkspaceLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceLayout.swift; sourceTree = "<group>"; };
+		809288D62EB6660500615D6D /* AttachmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentManager.swift; sourceTree = "<group>"; };
+		809288D72EB6660500615D6D /* FileSystemWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemWatcher.swift; sourceTree = "<group>"; };
+		809288D82EB6660500615D6D /* LinkResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkResolver.swift; sourceTree = "<group>"; };
+		809288D92EB6660500615D6D /* LinkResolverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkResolverProtocol.swift; sourceTree = "<group>"; };
+		809288DA2EB6660500615D6D /* NoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		809288DB2EB6660500615D6D /* NoteManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteManagerProtocol.swift; sourceTree = "<group>"; };
+		809288DC2EB6660500615D6D /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		809288DD2EB6660500615D6D /* SearchEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngineProtocol.swift; sourceTree = "<group>"; };
+		809288DE2EB6660500615D6D /* VaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultManager.swift; sourceTree = "<group>"; };
+		801B24FD8472E748EA9CA0EA /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		809288DF2EB6660500615D6D /* VaultManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultManagerProtocol.swift; sourceTree = "<group>"; };
+		809288E12EB6660500615D6D /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		809288E22EB6660500615D6D /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		809288E32EB6660500615D6D /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		809288E42EB6660500615D6D /* KeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcuts.swift; sourceTree = "<group>"; };
+		809288E52EB6660500615D6D /* MarkdownParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownParser.swift; sourceTree = "<group>"; };
+		809288E62EB6660500615D6D /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
+		809288E82EB6660500615D6D /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		809288EA2EB6660500615D6D /* AnimatedButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButtonStyles.swift; sourceTree = "<group>"; };
+		809288EB2EB6660500615D6D /* BacklinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacklinksView.swift; sourceTree = "<group>"; };
+		809288EC2EB6660500615D6D /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		809288ED2EB6660500615D6D /* CommandPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPaletteView.swift; sourceTree = "<group>"; };
+		809288EE2EB6660500615D6D /* CreateVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVaultView.swift; sourceTree = "<group>"; };
+		809288EF2EB6660500615D6D /* DailyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNotesView.swift; sourceTree = "<group>"; };
+		809288F02EB6660500615D6D /* EnhancedBacklinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedBacklinksView.swift; sourceTree = "<group>"; };
+		809288F12EB6660500615D6D /* EnhancedSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedSidebarView.swift; sourceTree = "<group>"; };
+		809288F22EB6660500615D6D /* EnhancedTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedTagsView.swift; sourceTree = "<group>"; };
+		809288F32EB6660500615D6D /* FilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesView.swift; sourceTree = "<group>"; };
+		809288F42EB6660500615D6D /* FolderRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderRowView.swift; sourceTree = "<group>"; };
+		809288F52EB6660500615D6D /* KeyboardShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsView.swift; sourceTree = "<group>"; };
+		809288F62EB6660500615D6D /* NoteEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorView.swift; sourceTree = "<group>"; };
+		809288F72EB6660500615D6D /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		809288F82EB6660500615D6D /* NoteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRowView.swift; sourceTree = "<group>"; };
+		809288F92EB6660500615D6D /* NotionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionEditor.swift; sourceTree = "<group>"; };
+		809288FA2EB6660500615D6D /* ObsidianAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianAboutView.swift; sourceTree = "<group>"; };
+		809288FB2EB6660500615D6D /* ObsidianButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianButtonStyles.swift; sourceTree = "<group>"; };
+		809288FC2EB6660500615D6D /* ObsidianConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianConstants.swift; sourceTree = "<group>"; };
+		809288FD2EB6660500615D6D /* ObsidianCreateVaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianCreateVaultView.swift; sourceTree = "<group>"; };
+		809288FE2EB6660500615D6D /* ObsidianEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianEditorView.swift; sourceTree = "<group>"; };
+		809288FF2EB6660500615D6D /* ObsidianPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianPreferencesView.swift; sourceTree = "<group>"; };
+		809289002EB6660500615D6D /* ObsidianRightSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianRightSidebarView.swift; sourceTree = "<group>"; };
+		809289012EB6660500615D6D /* ObsidianSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianSidebarView.swift; sourceTree = "<group>"; };
+		809289042EB6660500615D6D /* ObsidianStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianStyleView.swift; sourceTree = "<group>"; };
+		809289022EB6660500615D6D /* ObsidianVaultPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianVaultPickerView.swift; sourceTree = "<group>"; };
+		809289032EB6660500615D6D /* ObsidianWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObsidianWelcomeView.swift; sourceTree = "<group>"; };
+		809289042EB6660500615D6D /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		809289052EB6660500615D6D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		809289062EB6660500615D6D /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		809289072EB6660500615D6D /* SimpleTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextEditor.swift; sourceTree = "<group>"; };
+		809289082EB6660500615D6D /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		809289092EB6660500615D6D /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		8092890A2EB6660500615D6D /* VaultPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultPickerView.swift; sourceTree = "<group>"; };
+		8092890B2EB6660500615D6D /* VSCodeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSCodeStyleView.swift; sourceTree = "<group>"; };
+		8092890C2EB6660500615D6D /* WYSIWYMEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYSIWYMEditor.swift; sourceTree = "<group>"; };
+		8092890E2EB6660500615D6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8092890F2EB6660500615D6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		809289102EB6660500615D6D /* Strontium_Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Strontium_Notes.entitlements; sourceTree = "<group>"; };
+		809289112EB6660500615D6D /* Strontium_NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strontium_NotesApp.swift; sourceTree = "<group>"; };
+		809289132EB6660500615D6D /* Strontium_NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strontium_NotesTests.swift; sourceTree = "<group>"; };
+		809289152EB6660500615D6D /* Strontium_NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strontium_NotesUITests.swift; sourceTree = "<group>"; };
+		809289162EB6660500615D6D /* Strontium_NotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strontium_NotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		80CD00BD2EB668640022A504 /* StrontiumNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrontiumNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CD00FF2EB66B560022A504 /* icon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = icon.icon; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		809288BE2EB665FD00615D6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		809288B82EB665FD00615D6D = {
+			isa = PBXGroup;
+			children = (
+				809289122EB6660500615D6D /* Strontium Notes */,
+				809289142EB6660500615D6D /* Strontium NotesTests */,
+				809289172EB6660500615D6D /* Strontium NotesUITests */,
+				80CD00BD2EB668640022A504 /* StrontiumNotes.app */,
+			);
+			sourceTree = "<group>";
+		};
+		809288D52EB6660500615D6D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				809288CF2EB6660500615D6D /* Folder.swift */,
+				809288D02EB6660500615D6D /* Note.swift */,
+				809288D12EB6660500615D6D /* SearchModels.swift */,
+				809288D22EB6660500615D6D /* Vault.swift */,
+				809288D32EB6660500615D6D /* WikiLink.swift */,
+				809288D42EB6660500615D6D /* WorkspaceLayout.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		809288E02EB6660500615D6D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				809288D62EB6660500615D6D /* AttachmentManager.swift */,
+				809288D72EB6660500615D6D /* FileSystemWatcher.swift */,
+				809288D82EB6660500615D6D /* LinkResolver.swift */,
+				809288D92EB6660500615D6D /* LinkResolverProtocol.swift */,
+				809288DA2EB6660500615D6D /* NoteManager.swift */,
+				809288DB2EB6660500615D6D /* NoteManagerProtocol.swift */,
+				809288DC2EB6660500615D6D /* SearchEngine.swift */,
+				809288DD2EB6660500615D6D /* SearchEngineProtocol.swift */,
+				809288DE2EB6660500615D6D /* VaultManager.swift */,
+				801B24FD8472E748EA9CA0EA /* AIService.swift */,
+				809288DF2EB6660500615D6D /* VaultManagerProtocol.swift */,);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		809288E72EB6660500615D6D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				809288E12EB6660500615D6D /* Debouncer.swift */,
+				809288E22EB6660500615D6D /* ErrorHandler.swift */,
+				809288E32EB6660500615D6D /* HapticManager.swift */,
+				809288E42EB6660500615D6D /* KeyboardShortcuts.swift */,
+				809288E52EB6660500615D6D /* MarkdownParser.swift */,
+				809288E62EB6660500615D6D /* SyntaxHighlighter.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		809288E92EB6660500615D6D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				809288E82EB6660500615D6D /* AppViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8092890D2EB6660500615D6D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				809288EA2EB6660500615D6D /* AnimatedButtonStyles.swift */,
+				809288EB2EB6660500615D6D /* BacklinksView.swift */,
+				809288EC2EB6660500615D6D /* ColorScheme.swift */,
+				809288ED2EB6660500615D6D /* CommandPaletteView.swift */,
+				809288EE2EB6660500615D6D /* CreateVaultView.swift */,
+				809288EF2EB6660500615D6D /* DailyNotesView.swift */,
+				809288F02EB6660500615D6D /* EnhancedBacklinksView.swift */,
+				809288F12EB6660500615D6D /* EnhancedSidebarView.swift */,
+				809288F22EB6660500615D6D /* EnhancedTagsView.swift */,
+				809288F32EB6660500615D6D /* FilesView.swift */,
+				809288F42EB6660500615D6D /* FolderRowView.swift */,
+				809288F52EB6660500615D6D /* KeyboardShortcutsView.swift */,
+				809288F62EB6660500615D6D /* NoteEditorView.swift */,
+				809288F72EB6660500615D6D /* NoteListView.swift */,
+				809288F82EB6660500615D6D /* NoteRowView.swift */,
+				809288F92EB6660500615D6D /* NotionEditor.swift */,
+				809288FA2EB6660500615D6D /* ObsidianAboutView.swift */,
+				809288FB2EB6660500615D6D /* ObsidianButtonStyles.swift */,
+				809288FC2EB6660500615D6D /* ObsidianConstants.swift */,
+				809288FD2EB6660500615D6D /* ObsidianCreateVaultView.swift */,
+				809288FE2EB6660500615D6D /* ObsidianEditorView.swift */,
+				809288FF2EB6660500615D6D /* ObsidianPreferencesView.swift */,
+				809289002EB6660500615D6D /* ObsidianRightSidebarView.swift */,
+				809289012EB6660500615D6D /* ObsidianSidebarView.swift */,
+					809289042EB6660500615D6D /* ObsidianStyleView.swift */,
+				809289022EB6660500615D6D /* ObsidianVaultPickerView.swift */,
+				809289032EB6660500615D6D /* ObsidianWelcomeView.swift */,
+				809289042EB6660500615D6D /* PreferencesView.swift */,
+				809289052EB6660500615D6D /* SearchView.swift */,
+				809289062EB6660500615D6D /* SidebarView.swift */,
+				809289072EB6660500615D6D /* SimpleTextEditor.swift */,
+				809289082EB6660500615D6D /* StatisticsView.swift */,
+				809289092EB6660500615D6D /* TagsView.swift */,
+				8092890A2EB6660500615D6D /* VaultPickerView.swift */,
+				8092890B2EB6660500615D6D /* VSCodeStyleView.swift */,
+				8092890C2EB6660500615D6D /* WYSIWYMEditor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		809289122EB6660500615D6D /* Strontium Notes */ = {
+			isa = PBXGroup;
+			children = (
+				809288D52EB6660500615D6D /* Models */,
+				809288E02EB6660500615D6D /* Services */,
+				809288E72EB6660500615D6D /* Utils */,
+				809288E92EB6660500615D6D /* ViewModels */,
+				8092890D2EB6660500615D6D /* Views */,
+				8092890E2EB6660500615D6D /* Assets.xcassets */,
+				80CD00FF2EB66B560022A504 /* icon.icon */,
+				8092890F2EB6660500615D6D /* ContentView.swift */,
+				809289102EB6660500615D6D /* Strontium_Notes.entitlements */,
+				809289112EB6660500615D6D /* Strontium_NotesApp.swift */,
+			);
+			path = "Strontium Notes";
+			sourceTree = "<group>";
+		};
+		809289142EB6660500615D6D /* Strontium NotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				809289132EB6660500615D6D /* Strontium_NotesTests.swift */,
+			);
+			path = "Strontium NotesTests";
+			sourceTree = "<group>";
+		};
+		809289172EB6660500615D6D /* Strontium NotesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				809289152EB6660500615D6D /* Strontium_NotesUITests.swift */,
+				809289162EB6660500615D6D /* Strontium_NotesUITestsLaunchTests.swift */,
+			);
+			path = "Strontium NotesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		809288C02EB665FD00615D6D /* StrontiumNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 809288CC2EB665FD00615D6D /* Build configuration list for PBXNativeTarget "StrontiumNotes" */;
+			buildPhases = (
+				809288BE2EB665FD00615D6D /* Frameworks */,
+				809288BF2EB665FD00615D6D /* Resources */,
+				80CD00BF2EB669760022A504 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StrontiumNotes;
+			packageProductDependencies = (
+			);
+			productName = StrontiumNotes;
+			productReference = 80CD00BD2EB668640022A504 /* StrontiumNotes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		809288B92EB665FD00615D6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					809288C02EB665FD00615D6D = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 809288BC2EB665FD00615D6D /* Build configuration list for PBXProject "StrontiumNotes" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 809288B82EB665FD00615D6D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 809288B82EB665FD00615D6D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				809288C02EB665FD00615D6D /* StrontiumNotes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		809288BF2EB665FD00615D6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD01002EB66B560022A504 /* icon.icon in Resources */,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80CD00BF2EB669760022A504 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CD00C02EB669B40022A504 /* Folder.swift in Sources */,
+				80CD00C12EB669B40022A504 /* Note.swift in Sources */,
+				80CD00C22EB669B40022A504 /* SearchModels.swift in Sources */,
+				80CD00C32EB669B40022A504 /* Vault.swift in Sources */,
+				80CD00C42EB669B40022A504 /* WikiLink.swift in Sources */,
+				80CD00C52EB669B40022A504 /* WorkspaceLayout.swift in Sources */,
+				80CD00C62EB669B40022A504 /* AttachmentManager.swift in Sources */,
+				80CD00C72EB669B40022A504 /* FileSystemWatcher.swift in Sources */,
+				80CD00C82EB669B40022A504 /* LinkResolver.swift in Sources */,
+				80CD00C92EB669B40022A504 /* LinkResolverProtocol.swift in Sources */,
+				80CD00CA2EB669B40022A504 /* NoteManager.swift in Sources */,
+				80CD00CB2EB669B40022A504 /* NoteManagerProtocol.swift in Sources */,
+				80CD00CC2EB669B40022A504 /* SearchEngine.swift in Sources */,
+				80CD00CD2EB669B40022A504 /* SearchEngineProtocol.swift in Sources */,
+				80CD00CE2EB669B40022A504 /* VaultManager.swift in Sources */,
+				80EB66715C10F24FE4BD20DF /* AIService.swift in Sources */,
+				80CD00CF2EB669B40022A504 /* VaultManagerProtocol.swift in Sources */,
+				80CD00D02EB669B40022A504 /* Debouncer.swift in Sources */,
+				80CD00D12EB669B40022A504 /* ErrorHandler.swift in Sources */,
+				80CD00D22EB669B40022A504 /* HapticManager.swift in Sources */,
+				80CD00D32EB669B40022A504 /* KeyboardShortcuts.swift in Sources */,
+				80CD00D42EB669B40022A504 /* MarkdownParser.swift in Sources */,
+				80CD00D52EB669B40022A504 /* SyntaxHighlighter.swift in Sources */,
+				80CD00D62EB669B40022A504 /* AppViewModel.swift in Sources */,
+				80CD00D72EB669B40022A504 /* AnimatedButtonStyles.swift in Sources */,
+				80CD00D82EB669B40022A504 /* BacklinksView.swift in Sources */,
+				80CD00D92EB669B40022A504 /* ColorScheme.swift in Sources */,
+				80CD00DA2EB669B40022A504 /* CommandPaletteView.swift in Sources */,
+				80CD00DB2EB669B40022A504 /* CreateVaultView.swift in Sources */,
+				80CD00DC2EB669B40022A504 /* DailyNotesView.swift in Sources */,
+				80CD00DD2EB669B40022A504 /* EnhancedBacklinksView.swift in Sources */,
+				80CD00DE2EB669B40022A504 /* EnhancedSidebarView.swift in Sources */,
+				80CD00DF2EB669B40022A504 /* EnhancedTagsView.swift in Sources */,
+				80CD00E02EB669B40022A504 /* FilesView.swift in Sources */,
+				80CD00E12EB669B40022A504 /* FolderRowView.swift in Sources */,
+				80CD00E22EB669B40022A504 /* KeyboardShortcutsView.swift in Sources */,
+				80CD00E32EB669B40022A504 /* NoteEditorView.swift in Sources */,
+				80CD00E42EB669B40022A504 /* NoteListView.swift in Sources */,
+				80CD00E52EB669B40022A504 /* NoteRowView.swift in Sources */,
+				80CD00E62EB669B40022A504 /* NotionEditor.swift in Sources */,
+				80CD00E72EB669B40022A504 /* ObsidianAboutView.swift in Sources */,
+				80CD00E82EB669B40022A504 /* ObsidianButtonStyles.swift in Sources */,
+				80CD00E92EB669B40022A504 /* ObsidianConstants.swift in Sources */,
+				80CD00EA2EB669B40022A504 /* ObsidianCreateVaultView.swift in Sources */,
+				80CD00EB2EB669B40022A504 /* ObsidianEditorView.swift in Sources */,
+				80CD00EC2EB669B40022A504 /* ObsidianPreferencesView.swift in Sources */,
+				80CD00ED2EB669B40022A504 /* ObsidianRightSidebarView.swift in Sources */,
+				80CD00EE2EB669B40022A504 /* ObsidianSidebarView.swift in Sources */,
+					80CD0B042EB669B40022A504 /* ObsidianStyleView.swift in Sources */,
+				80CD00EF2EB669B40022A504 /* ObsidianVaultPickerView.swift in Sources */,
+				80CD00F02EB669B40022A504 /* ObsidianWelcomeView.swift in Sources */,
+				80CD00F12EB669B40022A504 /* PreferencesView.swift in Sources */,
+				80CD00F22EB669B40022A504 /* SearchView.swift in Sources */,
+				80CD00F32EB669B40022A504 /* SidebarView.swift in Sources */,
+				80CD00F42EB669B40022A504 /* SimpleTextEditor.swift in Sources */,
+				80CD00F52EB669B40022A504 /* StatisticsView.swift in Sources */,
+				80CD00F62EB669B40022A504 /* TagsView.swift in Sources */,
+				80CD00F72EB669B40022A504 /* VaultPickerView.swift in Sources */,
+				80CD00F82EB669B40022A504 /* VSCodeStyleView.swift in Sources */,
+				80CD00F92EB669B40022A504 /* WYSIWYMEditor.swift in Sources */,
+				80CD00FA2EB669B40022A504 /* ContentView.swift in Sources */,
+				80CD00FB2EB669B40022A504 /* Strontium_NotesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		809288CA2EB665FD00615D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		809288CB2EB665FD00615D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		809288CD2EB665FD00615D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = icon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Strontium Notes/Strontium_Notes.entitlements";
+						CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;				ENABLE_PREVIEWS = YES;				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Strontium Notes";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sriram.StrontiumNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		809288CE2EB665FD00615D6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = icon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Strontium Notes/Strontium_Notes.entitlements";
+						CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;				ENABLE_PREVIEWS = YES;				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Strontium Notes";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sriram.StrontiumNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		809288BC2EB665FD00615D6D /* Build configuration list for PBXProject "StrontiumNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				809288CA2EB665FD00615D6D /* Debug */,
+				809288CB2EB665FD00615D6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		809288CC2EB665FD00615D6D /* Build configuration list for PBXNativeTarget "StrontiumNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				809288CD2EB665FD00615D6D /* Debug */,
+				809288CE2EB665FD00615D6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 809288B92EB665FD00615D6D /* Project object */;
+}

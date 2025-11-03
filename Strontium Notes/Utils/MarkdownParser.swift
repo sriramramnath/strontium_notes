@@ -13,7 +13,7 @@ struct MarkdownParser {
     
     /// Parse markdown and return attributed string
     static func parse(_ markdown: String) -> AttributedString {
-        var attributedString = AttributedString(markdown)
+        let attributedString = AttributedString(markdown)
         
         // Apply basic markdown styling
         // This is a simplified implementation - for production, consider using a proper markdown library

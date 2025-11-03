@@ -109,20 +109,23 @@ class NoteManager: NoteManagerProtocol, ObservableObject {
     }
     
     func renameNote(_ note: Note, to newTitle: String) async throws -> Note {
-        let oldURL = URL(fileURLWithPath: note.filePath)
-        let directory = oldURL.deletingLastPathComponent()
-        let newFileName = sanitizeFileName(newTitle) + ".md"
-        let newURL = directory.appendingPathComponent(newFileName)
+        // filePath is relative to vault root
+        // Extract directory path
+        let pathComponents = note.filePath.components(separatedBy: "/")
+        var directoryComponents = pathComponents
+        directoryComponents.removeLast() // Remove old filename
         
-        // Check if target already exists
-        if fileManager.fileExists(atPath: newURL.path) {
-            throw NoteError.duplicateTitle
+        let newFileName = sanitizeFileName(newTitle) + ".md"
+        let newRelativePath: String
+        
+        if directoryComponents.isEmpty {
+            newRelativePath = newFileName
+        } else {
+            newRelativePath = directoryComponents.joined(separator: "/") + "/" + newFileName
         }
         
-        try fileManager.moveItem(at: oldURL, to: newURL)
-        
-        let newPath = newURL.path
-        let updatedNote = Note(filePath: newPath, title: newTitle, content: note.content)
+        // Create updated note with new relative path
+        let updatedNote = Note(filePath: newRelativePath, title: newTitle, content: note.content)
         noteDidChangeSubject.send(updatedNote)
         
         return updatedNote

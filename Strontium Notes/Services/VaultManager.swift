@@ -51,10 +51,7 @@ class VaultManager: VaultManagerProtocol, ObservableObject {
             throw VaultError.invalidVaultStructure
         }
         
-        // Check permissions
-        guard fileManager.isReadableFile(atPath: url.path) && fileManager.isWritableFile(atPath: url.path) else {
-            throw VaultError.permissionDenied
-        }
+        // Permission check removed - file picker grants access automatically
         
         // Check if it's a network location
         if url.path.hasPrefix("/Volumes/") || url.path.contains("://") {

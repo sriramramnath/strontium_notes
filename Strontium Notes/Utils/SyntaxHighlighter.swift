@@ -12,7 +12,7 @@ struct SyntaxHighlighter {
     
     /// Highlight code based on language
     static func highlight(code: String, language: String) -> AttributedString {
-        var attributed = AttributedString(code)
+        let attributed = AttributedString(code)
         
         switch language.lowercased() {
         case "swift":

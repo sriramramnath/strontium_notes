@@ -1,0 +1,152 @@
+{
+  "source": "/Users/sriram/Desktop/Code/Strontium Notes/Strontium Notes/Views/CreateVaultView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Create New Vault",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "Set up a new vault for your notes",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Vault Name",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "My Notes",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "Location",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 48
+        }
+      },
+      {
+        "comment": "",
+        "key": "No location selected",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 61
+        }
+      },
+      {
+        "comment": "",
+        "key": "Choose...",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": "in %@",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "Options",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create sample notes",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add some example notes to help you get started",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 85
+        }
+      },
+      {
+        "comment": "",
+        "key": "Vault Preview",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 94
+        }
+      },
+      {
+        "comment": "",
+        "key": "  ",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 109
+        }
+      },
+      {
+        "comment": "",
+        "key": "Welcome.md",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 112
+        }
+      },
+      {
+        "comment": "",
+        "key": "  ",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "Getting Started.md",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Create Vault",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 141
+        }
+      }
+    ]
+  },
+  "version": 1
+}

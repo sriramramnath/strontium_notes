@@ -54,6 +54,8 @@ struct ContentView: View {
                 EmptyView() // Handled in VSCodeStyleView
             case .createFolder:
                 EmptyView() // Handled in VSCodeStyleView
+            case .upgrade:
+                EmptyView() // Handled in VSCodeStyleView
             }
         }
 

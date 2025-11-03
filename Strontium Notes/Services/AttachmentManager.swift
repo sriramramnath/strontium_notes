@@ -7,10 +7,12 @@
 
 import Foundation
 import UniformTypeIdentifiers
+import Combine
 
 /// Manages file attachments and embeddings
 @MainActor
 class AttachmentManager: ObservableObject {
+    let objectWillChange = ObservableObjectPublisher()
     private let fileManager = FileManager.default
     
     /// Copy a file to the vault's attachments folder
